@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto | MONET</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="product-page">
+    <!-- ============================================
+         NAVEGACIÓN
+         ============================================ -->
+    <header class="main-header" id="mainHeader">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">MONET</span>
+                <span class="logo-tagline">Haute Maroquinerie</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#private-edition" class="nav-link">Private Edition</a></li>
+                <li><a href="index.html#coleccion" class="nav-link">Colección</a></li>
+                <li><a href="index.html#maison" class="nav-link">Maison</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link nav-cart">
+                        <svg class="bag-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 6V5C6 3.34315 7.34315 2 9 2H15C16.6569 2 18 3.34315 18 5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M3 8.5C3 7.11929 4.11929 6 5.5 6H18.5C19.8807 6 21 7.11929 21 8.5V19C21 20.6569 19.6569 22 18 22H6C4.34315 22 3 20.6569 3 19V8.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 10V12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                        Cesta
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         BREADCRUMB
+         ============================================ -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Inicio</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="index.html#coleccion">Colección</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current" id="breadcrumbProduct">Producto</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PÁGINA DE PRODUCTO
+         ============================================ -->
+    <main class="product-detail">
+        <div class="product-detail-container">
+            <!-- Columna izquierda: Visor 3D -->
+            <div class="product-gallery">
+                <div class="bag-3d-viewer" id="bag3DViewer">
+                    <div class="bag-3d" id="bag3D" data-color="noir">
+                        <!-- Cara frontal -->
+                        <div class="bag-face bag-front">
+                            <div class="bag-detail-flap"></div>
+                            <div class="bag-detail-clasp">
+                                <div class="clasp-inner"></div>
+                            </div>
+                            <div class="bag-detail-pocket"></div>
+                            <div class="bag-logo">M</div>
+                        </div>
+                        <!-- Cara trasera -->
+                        <div class="bag-face bag-back">
+                            <div class="bag-back-pocket"></div>
+                            <div class="bag-back-zipper"></div>
+                        </div>
+                        <!-- Cara izquierda -->
+                        <div class="bag-face bag-left">
+                            <div class="bag-side-detail"></div>
+                        </div>
+                        <!-- Cara derecha -->
+                        <div class="bag-face bag-right">
+                            <div class="bag-side-detail"></div>
+                        </div>
+                        <!-- Cara superior -->
+                        <div class="bag-face bag-top">
+                            <div class="bag-handle-3d"></div>
+                        </div>
+                        <!-- Cara inferior -->
+                        <div class="bag-face bag-bottom">
+                            <div class="bag-feet"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles de rotación -->
+                <div class="viewer-controls">
+                    <button class="control-btn" id="rotateLeft" title="Girar izquierda">
+                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                            <path d="M2.5 12C2.5 7.02944 6.52944 3 11.5 3C16.4706 3 20.5 7.02944 20.5 12C20.5 16.9706 16.4706 21 11.5 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M6 3L2 7L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="toggleRotation" title="Auto rotación">
+                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20" id="playIcon">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9.5 8.96533C9.5 8.48805 9.5 8.24941 9.59974 8.11618C9.68666 8.00007 9.81971 7.92744 9.96438 7.9171C10.1304 7.90525 10.3311 8.03429 10.7326 8.29239L15.4532 11.3271C15.8016 11.551 15.9758 11.663 16.0359 11.8054C16.088 11.9298 16.088 12.0702 16.0359 12.1946C15.9758 12.337 15.8016 12.449 15.4532 12.6729L10.7326 15.7076C10.3311 15.9657 10.1304 16.0948 9.96438 16.0829C9.81971 16.0726 9.68666 15.9999 9.59974 15.8838C9.5 15.7506 9.5 15.512 9.5 15.0347V8.96533Z" fill="currentColor"/>
+                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20" id="pauseIcon" style="display: none;">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 9V15M15 9V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="rotateRight" title="Girar derecha">
+                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                            <path d="M21.5 12C21.5 7.02944 17.4706 3 12.5 3C7.52944 3 3.5 7.02944 3.5 12C3.5 16.9706 7.52944 21 12.5 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M18 3L22 7L18 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="viewer-hint">
+                    <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12 2C6.47715 2 2 6.47715 2 12C2 14.7614 3.11929 17.2614 4.92893 19.0711" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+                    </svg>
+                    Arrastra para girar el bolso en 360°
+                </p>
+            </div>
+
+            <!-- Columna derecha: Información del producto -->
+            <div class="product-info-panel">
+                <div class="product-header">
+                    <span class="product-badge-label" id="productBadge">Signature</span>
+                    <h1 class="product-title" id="productTitle">Signature Monet</h1>
+                    <p class="product-tagline" id="productTagline">
+                        Nuestra pieza icónica, símbolo de elegancia atemporal
+                    </p>
+                </div>
+
+                <div class="product-price-section">
+                    <span class="product-price-large" id="productPrice">€2,450</span>
+                    <span class="product-tax">IVA incluido</span>
+                </div>
+
+                <!-- Selector de color -->
+                <div class="color-selector">
+                    <div class="selector-header">
+                        <span class="selector-label">Color</span>
+                        <span class="selected-color-name" id="selectedColorName">Noir Élégant</span>
+                    </div>
+                    <div class="color-swatches" id="colorSwatches">
+                        <button class="color-swatch active" data-color="noir" data-price="2450" style="--swatch-color: #1a1a1a;" title="Noir Élégant">
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button class="color-swatch" data-color="camel" data-price="2450" style="--swatch-color: #c4a77d;" title="Camel Classique">
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button class="color-swatch" data-color="burgundy" data-price="2550" style="--swatch-color: #722f37;" title="Bordeaux Prestige">
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button class="color-swatch" data-color="navy" data-price="2450" style="--swatch-color: #1e3a5f;" title="Bleu Nuit">
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button class="color-swatch" data-color="ivory" data-price="2650" style="--swatch-color: #f5f0e8;" title="Ivoire Pur">
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button class="color-swatch" data-color="olive" data-price="2550" style="--swatch-color: #5c6b4a;" title="Olive Toscan">
+                            <span class="swatch-check">✓</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón añadir a cesta -->
+                <button class="btn btn-add-to-cart" id="addToCartBtn">
+                    <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                        <path d="M6 6V5C6 3.34315 7.34315 2 9 2H15C16.6569 2 18 3.34315 18 5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M3 8.5C3 7.11929 4.11929 6 5.5 6H18.5C19.8807 6 21 7.11929 21 8.5V19C21 20.6569 19.6569 22 18 22H6C4.34315 22 3 20.6569 3 19V8.5Z" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    Añadir a la Cesta
+                </button>
+
+                <!-- Detalles del producto -->
+                <div class="product-details-section">
+                    <div class="detail-accordion">
+                        <button class="accordion-header active" data-accordion="description">
+                            <span>Descripción</span>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content active" id="description">
+                            <p id="productDescription">
+                                El Signature Monet encarna la esencia de nuestra maison:
+                                líneas puras, proporciones perfectas y una atención obsesiva
+                                al detalle. Confeccionado íntegramente a mano en nuestro
+                                atelier parisino.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="detail-accordion">
+                        <button class="accordion-header" data-accordion="materials">
+                            <span>Materiales & Artesanía</span>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content" id="materials">
+                            <ul class="materials-list">
+                                <li>
+                                    <span class="material-icon">◆</span>
+                                    <span>Cuero de becerro italiano de plena flor</span>
+                                </li>
+                                <li>
+                                    <span class="material-icon">◆</span>
+                                    <span>Forro interior en suede premium</span>
+                                </li>
+                                <li>
+                                    <span class="material-icon">◆</span>
+                                    <span>Herrajes bañados en oro 18 quilates</span>
+                                </li>
+                                <li>
+                                    <span class="material-icon">◆</span>
+                                    <span>Cremallera YKK Excella de lujo</span>
+                                </li>
+                                <li>
+                                    <span class="material-icon">◆</span>
+                                    <span>Costuras a mano con hilo de seda</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-accordion">
+                        <button class="accordion-header" data-accordion="dimensions">
+                            <span>Dimensiones</span>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content" id="dimensions">
+                            <div class="dimensions-grid" id="dimensionsGrid">
+                                <div class="dimension">
+                                    <span class="dim-label">Ancho</span>
+                                    <span class="dim-value">28 cm</span>
+                                </div>
+                                <div class="dimension">
+                                    <span class="dim-label">Alto</span>
+                                    <span class="dim-value">20 cm</span>
+                                </div>
+                                <div class="dimension">
+                                    <span class="dim-label">Profundidad</span>
+                                    <span class="dim-value">12 cm</span>
+                                </div>
+                                <div class="dimension">
+                                    <span class="dim-label">Asa</span>
+                                    <span class="dim-value">22 cm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-accordion">
+                        <button class="accordion-header" data-accordion="shipping">
+                            <span>Envío & Devoluciones</span>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content" id="shipping">
+                            <ul class="shipping-list">
+                                <li>Envío express gratuito (2-3 días)</li>
+                                <li>Embalaje de regalo premium incluido</li>
+                                <li>Devolución gratuita en 30 días</li>
+                                <li>Certificado de autenticidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garantías -->
+                <div class="product-guarantees">
+                    <div class="guarantee">
+                        <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Autenticidad garantizada</span>
+                    </div>
+                    <div class="guarantee">
+                        <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>2 años de garantía</span>
+                    </div>
+                    <div class="guarantee">
+                        <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                            <path d="M20 12V22H4V12M22 7H2V12H22V7ZM12 22V7M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7ZM12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Empaque de regalo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">MONET</span>
+                <p>Haute Maroquinerie depuis 2010</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>La Maison</h4>
+                    <a href="index.html#maison">Nuestra Historia</a>
+                    <a href="index.html#maison">Artesanía</a>
+                    <a href="index.html#coleccion">Colecciones</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicio</h4>
+                    <a href="#">Contacto</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Cuidado del Cuero</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MONET. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Notificación -->
+    <div class="cart-notification" id="cartNotification">
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+            <path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Añadido a tu cesta</span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

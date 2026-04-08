@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONET | Haute Maroquinerie</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ============================================
+         NAVEGACIÓN PREMIUM
+         ============================================ -->
+    <header class="main-header" id="mainHeader">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">MONET</span>
+                <span class="logo-tagline">Haute Maroquinerie</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#private-edition" class="nav-link active" data-section="private-edition">Private Edition</a></li>
+                <li><a href="#coleccion" class="nav-link" data-section="coleccion">Colección</a></li>
+                <li><a href="#maison" class="nav-link" data-section="maison">Maison</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link nav-cart">
+                        <svg class="bag-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 6V5C6 3.34315 7.34315 2 9 2H15C16.6569 2 18 3.34315 18 5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M3 8.5C3 7.11929 4.11929 6 5.5 6H18.5C19.8807 6 21 7.11929 21 8.5V19C21 20.6569 19.6569 22 18 22H6C4.34315 22 3 20.6569 3 19V8.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 10V12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                        Cesta
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         SECCIÓN 1: PRIVATE EDITION
+         ============================================ -->
+    <section id="private-edition" class="section private-edition">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge animate-fade-up">Édition Limitée</span>
+                <h1 class="hero-title animate-fade-up delay-1">
+                    <span class="title-line">The</span>
+                    <span class="title-main">Monet</span>
+                    <span class="title-line">Collection</span>
+                </h1>
+                <p class="hero-description animate-fade-up delay-2">
+                    Una obra maestra de la artesanía contemporánea. Cada pieza es una declaración
+                    de elegancia atemporal, meticulosamente elaborada con los más finos materiales
+                    y una dedicación sin igual al detalle.
+                </p>
+                <div class="hero-cta animate-fade-up delay-3">
+                    <a href="#coleccion" class="btn btn-primary">Descubrir la Colección</a>
+                    <a href="#maison" class="btn btn-secondary">Nuestra Historia</a>
+                </div>
+                <div class="hero-features animate-fade-up delay-4">
+                    <div class="feature">
+                        <span class="feature-number">100%</span>
+                        <span class="feature-text">Cuero Italiano</span>
+                    </div>
+                    <div class="feature-divider"></div>
+                    <div class="feature">
+                        <span class="feature-number">48h</span>
+                        <span class="feature-text">Trabajo Artesanal</span>
+                    </div>
+                    <div class="feature-divider"></div>
+                    <div class="feature">
+                        <span class="feature-number">Limited</span>
+                        <span class="feature-text">Edición Numerada</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image animate-fade-left">
+                <div class="image-frame">
+                    <img src="images/monet-private.png" alt="Monet Private Edition Bag" class="hero-product-image">
+                </div>
+                <div class="floating-badge">
+                    <span>Private</span>
+                    <span>Edition</span>
+                    <span>2024</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 2: COLECCIÓN
+         ============================================ -->
+    <section id="coleccion" class="section coleccion">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">La Colección</span>
+                <h2 class="section-title">Nuestras Creaciones</h2>
+                <p class="section-subtitle">
+                    Cada bolso cuenta una historia de artesanía excepcional,
+                    donde la tradición se encuentra con el diseño contemporáneo.
+                </p>
+            </div>
+
+            <!-- GRID DE PRODUCTOS -->
+            <div class="products-grid">
+                <!-- Producto 1: Monet Signature -->
+                <article class="product-card" data-product-id="signature">
+                    <a href="product.html?id=signature" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-signature">
+                                <div class="mini-bag signature">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-flap"></div>
+                                    <div class="mini-bag-clasp"></div>
+                                    <div class="mini-bag-handle"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                            <span class="product-badge exclusive">Signature</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Signature Monet</h3>
+                            <p class="product-description">
+                                Nuestra pieza icónica. Estructura perfecta con cierre de broche dorado.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">Desde €2,450</span>
+                                <span class="product-colors">6 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Producto 2: Monet Classic -->
+                <article class="product-card" data-product-id="classic">
+                    <a href="product.html?id=classic" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-1">
+                                <div class="mini-bag">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-flap"></div>
+                                    <div class="mini-bag-handle"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                            <span class="product-badge">Bestseller</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Le Monet Classic</h3>
+                            <p class="product-description">
+                                Bolso estructurado con cierre de cremallera dorada.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">€1,890</span>
+                                <span class="product-colors">4 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Producto 3: Monet Tote -->
+                <article class="product-card" data-product-id="tote">
+                    <a href="product.html?id=tote" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-2">
+                                <div class="mini-bag tote">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-handles"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Le Monet Tote</h3>
+                            <p class="product-description">
+                                Tote espacioso con doble asa y bolsillo interior.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">€2,150</span>
+                                <span class="product-colors">5 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Producto 4: Monet Pochette -->
+                <article class="product-card" data-product-id="pochette">
+                    <a href="product.html?id=pochette" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-3">
+                                <div class="mini-bag pochette">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-chain"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                            <span class="product-badge new">Nouveau</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">La Pochette Monet</h3>
+                            <p class="product-description">
+                                Clutch elegante con cadena desmontable dorada.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">€1,290</span>
+                                <span class="product-colors">4 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Producto 5: Monet Mini -->
+                <article class="product-card" data-product-id="mini">
+                    <a href="product.html?id=mini" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-4">
+                                <div class="mini-bag crossbody">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-flap"></div>
+                                    <div class="mini-bag-strap"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Le Mini Monet</h3>
+                            <p class="product-description">
+                                Crossbody compacto con correa ajustable.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">€1,450</span>
+                                <span class="product-colors">6 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Producto 6: Monet Voyage -->
+                <article class="product-card" data-product-id="voyage">
+                    <a href="product.html?id=voyage" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-5">
+                                <div class="mini-bag weekender">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-handles"></div>
+                                    <div class="mini-bag-zipper-line"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                            <span class="product-badge exclusive">Exclusivo</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Le Voyage Monet</h3>
+                            <p class="product-description">
+                                Weekender de viaje con múltiples compartimentos.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">€3,200</span>
+                                <span class="product-colors">3 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Producto 7: Monet Bucket -->
+                <article class="product-card" data-product-id="bucket">
+                    <a href="product.html?id=bucket" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-6">
+                                <div class="mini-bag bucket">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-drawstring"></div>
+                                    <div class="mini-bag-strap"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Le Seau Monet</h3>
+                            <p class="product-description">
+                                Bucket bag con cierre de cordón elegante.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">€1,750</span>
+                                <span class="product-colors">5 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Producto 8: Monet Baguette -->
+                <article class="product-card" data-product-id="baguette">
+                    <a href="product.html?id=baguette" class="product-link">
+                        <div class="product-image">
+                            <div class="image-placeholder product-bag bag-style-7">
+                                <div class="mini-bag baguette">
+                                    <div class="mini-bag-body"></div>
+                                    <div class="mini-bag-strap-short"></div>
+                                </div>
+                            </div>
+                            <div class="product-overlay">
+                                <span class="view-product-btn">Ver Producto</span>
+                            </div>
+                            <span class="product-badge new">Nouveau</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">La Baguette Monet</h3>
+                            <p class="product-description">
+                                Silueta alargada icónica con asa corta.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">€1,650</span>
+                                <span class="product-colors">4 colores</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 3: MAISON
+         ============================================ -->
+    <section id="maison" class="section maison">
+        <div class="maison-container">
+            <div class="maison-hero">
+                <div class="maison-hero-content">
+                    <span class="section-badge">La Maison</span>
+                    <h2 class="maison-title">El Arte de la<br>Excelencia</h2>
+                    <p class="maison-intro">
+                        Desde nuestros humildes comienzos en un pequeño atelier parisino,
+                        MONET ha cultivado una visión singular: crear piezas que trascienden
+                        el tiempo y las tendencias.
+                    </p>
+                </div>
+                <div class="maison-hero-image">
+                    <div class="atelier-visual">
+                        <div class="atelier-frame">
+                            <div class="atelier-content">
+                                <span>Atelier</span>
+                                <span>Paris</span>
+                                <span>Est. 2010</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="maison-blocks">
+                <article class="maison-block">
+                    <div class="block-number">01</div>
+                    <div class="block-content">
+                        <h3>Nuestra Historia</h3>
+                        <p>
+                            Fundada en 2010 por la visionaria diseñadora Isabelle Monet, nuestra
+                            maison nació de un sueño: devolver al bolso su estatus de obra de arte.
+                            Inspirada por los maestros impresionistas y la tradición de la alta
+                            marroquinería francesa, cada colección es un homenaje a la belleza
+                            atemporal.
+                        </p>
+                        <p>
+                            Lo que comenzó como un pequeño taller en el Marais se ha convertido
+                            en un símbolo de elegancia reconocido en todo el mundo.
+                        </p>
+                    </div>
+                    <div class="block-image">
+                        <div class="decorative-element de-1"></div>
+                    </div>
+                </article>
+
+                <article class="maison-block reverse">
+                    <div class="block-number">02</div>
+                    <div class="block-content">
+                        <h3>Nuestra Visión</h3>
+                        <p>
+                            Creemos que el verdadero lujo reside en los detalles invisibles:
+                            las costuras perfectas que nadie verá, el interior impecable,
+                            la selección meticulosa de cada pieza de cuero.
+                        </p>
+                        <p>
+                            En un mundo de producción masiva, elegimos la lentitud.
+                            Cada bolso MONET requiere más de 48 horas de trabajo artesanal.
+                        </p>
+                    </div>
+                    <div class="block-image">
+                        <div class="decorative-element de-2"></div>
+                    </div>
+                </article>
+
+                <article class="maison-block">
+                    <div class="block-number">03</div>
+                    <div class="block-content">
+                        <h3>Artesanía & Detalle</h3>
+                        <p>
+                            Nuestros artesanos son los guardianes de técnicas centenarias.
+                            Cada puntada, cada corte, cada acabado es ejecutado con la
+                            precisión de quien entiende que está creando algo destinado
+                            a perdurar generaciones.
+                        </p>
+                        <div class="craftsmanship-features">
+                            <div class="craft-feature">
+                                <span class="craft-icon">◆</span>
+                                <span>Costuras a mano con hilo de seda</span>
+                            </div>
+                            <div class="craft-feature">
+                                <span class="craft-icon">◆</span>
+                                <span>Herrajes bañados en oro 18k</span>
+                            </div>
+                            <div class="craft-feature">
+                                <span class="craft-icon">◆</span>
+                                <span>Cuero curtido vegetalmente en Toscana</span>
+                            </div>
+                            <div class="craft-feature">
+                                <span class="craft-icon">◆</span>
+                                <span>Cremalleras YKK Excella premium</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-image">
+                        <div class="decorative-element de-3"></div>
+                    </div>
+                </article>
+
+                <article class="maison-block reverse">
+                    <div class="block-number">04</div>
+                    <div class="block-content">
+                        <h3>Exclusividad</h3>
+                        <p>
+                            Rechazamos la producción en masa. Cada modelo se produce en
+                            series limitadas, numeradas y certificadas. Cuando adquieres
+                            un bolso MONET, te unes a un círculo selecto de conocedores.
+                        </p>
+                        <p>
+                            Nuestro servicio de personalización permite crear una pieza
+                            verdaderamente única: desde la selección del cuero hasta el
+                            grabado de iniciales.
+                        </p>
+                    </div>
+                    <div class="block-image">
+                        <div class="decorative-element de-4"></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="maison-quote">
+                <blockquote>
+                    "Un bolso no es solo un accesorio. Es la extensión de quien lo lleva,
+                    un reflejo silencioso de su elegancia y carácter."
+                </blockquote>
+                <cite>— Isabelle Monet, Fundadora</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">MONET</span>
+                <p>Haute Maroquinerie depuis 2010</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>La Maison</h4>
+                    <a href="#maison">Nuestra Historia</a>
+                    <a href="#maison">Artesanía</a>
+                    <a href="#coleccion">Colecciones</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicio</h4>
+                    <a href="#">Contacto</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Cuidado del Cuero</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MONET. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Notificación -->
+    <div class="cart-notification" id="cartNotification">
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+            <path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Añadido a tu cesta</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
