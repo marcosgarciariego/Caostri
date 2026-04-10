@@ -273,3 +273,55 @@ window.MonetApp = {
     saveCart,
     clearCart
 };
+// CONTADOR ANIMADO HERO
+const counters = document.querySelectorAll('.feature-number[data-target]');
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+
+        const isPercent = counter.innerText.includes('%');
+        const isHours = counter.innerText.includes('h');
+
+        const increment = target / 80; // velocidad (ajusta si quieres)
+
+        const updateCount = () => {
+            count += increment;
+
+            if (count < target) {
+                if (isPercent) {
+                    counter.innerText = Math.floor(count) + '%';
+                } else if (isHours) {
+                    counter.innerText = Math.floor(count) + 'h';
+                } else {
+                    counter.innerText = Math.floor(count);
+                }
+                requestAnimationFrame(updateCount);
+            } else {
+                if (isPercent) {
+                    counter.innerText = target + '%';
+                } else if (isHours) {
+                    counter.innerText = target + 'h';
+                } else {
+                    counter.innerText = target;
+                }
+            }
+        };
+
+        updateCount();
+    });
+};
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            observer.disconnect(); // solo una vez
+        }
+    });
+}, { threshold: 0.5 });
+
+const heroSection = document.querySelector('.hero-features');
+if (heroSection) {
+    observer.observe(heroSection);
+}

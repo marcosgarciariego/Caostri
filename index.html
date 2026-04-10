@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONET | Haute Maroquinerie</title>
+    <title>CAOSTRI | La forma de lo irrepetible</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,15 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- ============================================
@@ -20,8 +29,8 @@
     <header class="main-header" id="mainHeader">
         <nav class="nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-text">MONET</span>
-                <span class="logo-tagline">Haute Maroquinerie</span>
+                <span class="logo-text">CAOSTRI</span>
+                <span class="logo-tagline">La forma de lo irrepetible</span>
             </a>
 
             <ul class="nav-menu" id="navMenu">
@@ -55,7 +64,7 @@
     <section id="private-edition" class="section private-edition">
         <div class="hero-container">
             <div class="hero-content">
-                <span class="hero-badge animate-fade-up">Édition Limitée</span>
+                <span class="hero-badge animate-fade-up">Edición limitada</span>
                 <h1 class="hero-title animate-fade-up delay-1">
                     <span class="title-line">The</span>
                     <span class="title-main">Monet</span>
@@ -72,12 +81,12 @@
                 </div>
                 <div class="hero-features animate-fade-up delay-4">
                     <div class="feature">
-                        <span class="feature-number">100%</span>
-                        <span class="feature-text">Cuero Italiano</span>
+                        <span class="feature-number" data-target="100">0%</span>
+                        <span class="feature-text">Cuero de plena flor</span>
                     </div>
                     <div class="feature-divider"></div>
                     <div class="feature">
-                        <span class="feature-number">48h</span>
+                        <span class="feature-number" data-target="300">0h</span>
                         <span class="feature-text">Trabajo Artesanal</span>
                     </div>
                     <div class="feature-divider"></div>
@@ -87,23 +96,15 @@
                     </div>
                 </div>
             </div>
-
             <div class="hero-image animate-fade-left">
-                <div class="image-frame">
-                    <img src="images/monet-private.png" alt="Monet Private Edition Bag" class="hero-product-image">
-                </div>
-                <div class="floating-badge">
-                    <span>Private</span>
-                    <span>Edition</span>
-                    <span>2024</span>
+                <div class="image-frame hero-model-stage">
+                    <div id="heroModelViewer" class="hero-model-viewer" aria-label="Visor 3D del bolso"></div>
+                    <div class="hero-model-overlay" id="heroModelStatus">Cargando bolso 3D...</div>
+                    <div class="hero-model-hint" id="heroModelHint">Arrastra para girar</div>
                 </div>
             </div>
         </div>
 
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
     </section>
 
     <!-- ============================================
@@ -252,7 +253,7 @@
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Le Mini Monet</h3>
+                            <h3 class="product-name">Le Mini </h3>
                             <p class="product-description">
                                 Crossbody compacto con correa ajustable.
                             </p>
@@ -281,7 +282,7 @@
                             <span class="product-badge exclusive">Exclusivo</span>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Le Voyage Monet</h3>
+                            <h3 class="product-name">Le Voyage </h3>
                             <p class="product-description">
                                 Weekender de viaje con múltiples compartimentos.
                             </p>
@@ -492,8 +493,8 @@
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <span class="footer-logo">MONET</span>
-                <p>Haute Maroquinerie depuis 2010</p>
+                <span class="footer-logo">CAOSTRI</span>
+                <p>SINCE 2016</p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
@@ -529,6 +530,7 @@
         <span>Añadido a tu cesta</span>
     </div>
 
+    <script src="js/hero-model.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

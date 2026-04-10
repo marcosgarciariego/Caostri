@@ -1,9 +1,4 @@
-/* =============================================
-   MONET - Haute Maroquinerie
-   Estilos Premium para Web de Lujo
-   ============================================= */
 
-/* ----- VARIABLES CSS ----- */
 :root {
     /* Colores principales */
     --color-white: #ffffff;
@@ -505,8 +500,10 @@ ul, ol {
 .hero-image {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    width: 100%;
+    padding-left: clamp(0rem, 2vw, 1.5rem);
 }
 
 .image-frame {
@@ -514,6 +511,7 @@ ul, ol {
     width: 100%;
     max-width: 500px;
     aspect-ratio: 4/5;
+    margin-left: auto;
 }
 
 .image-placeholder {
@@ -535,6 +533,99 @@ ul, ol {
     height: 100%;
     object-fit: contain;
     object-position: center;
+}
+
+.hero-model-stage {
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+    min-height: min(560px, 70vh);
+    border-radius: 32px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 42%),
+        radial-gradient(circle at 70% 75%, rgba(201, 169, 98, 0.14), rgba(201, 169, 98, 0) 35%),
+        linear-gradient(145deg, rgba(245, 243, 240, 0.98) 0%, rgba(234, 231, 226, 0.95) 100%);
+    border: 1px solid rgba(212, 201, 188, 0.65);
+    box-shadow:
+        0 30px 80px rgba(26, 26, 26, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.hero-model-viewer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    cursor: grab;
+    touch-action: none;
+}
+
+.hero-model-viewer.is-dragging {
+    cursor: grabbing;
+}
+
+.hero-model-viewer canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-model-sprite {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8% 8% 12%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.hero-model-overlay,
+.hero-model-hint {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    pointer-events: none;
+}
+
+.hero-model-overlay {
+    top: 1.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(212, 201, 188, 0.75);
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.hero-model-stage.is-ready .hero-model-overlay {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.hero-model-stage.is-error .hero-model-overlay {
+    opacity: 1;
+    color: #7b3f3f;
+}
+
+.hero-model-hint {
+    bottom: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gray);
+    background: rgba(250, 249, 247, 0.78);
+    border: 1px solid rgba(212, 201, 188, 0.55);
+}
+
+.hero-model-stage.is-sprite .hero-model-hint {
+    display: none;
 }
 
 .floating-badge {
@@ -2129,6 +2220,8 @@ ul, ol {
 
     .hero-image {
         order: 1;
+        justify-content: center;
+        padding-left: 0;
     }
 
     .hero-description {
@@ -2141,6 +2234,10 @@ ul, ol {
 
     .hero-features {
         justify-content: center;
+    }
+
+    .image-frame {
+        margin: 0 auto;
     }
 
     .cart-content {
@@ -2256,6 +2353,18 @@ ul, ol {
 
     .btn {
         width: 100%;
+    }
+
+    .hero-model-stage {
+        min-height: 340px;
+        border-radius: 24px;
+    }
+
+    .hero-model-overlay,
+    .hero-model-hint {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
     }
 
     .bag-3d-viewer {
