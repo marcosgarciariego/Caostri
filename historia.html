@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAOSTRI | Maison</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/monet.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="history-page">
+    <header class="main-header" id="mainHeader">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">CAOSTRI</span>
+                <span class="logo-tagline">La forma de lo irrepetible</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Private Edition</a></li>
+                <li><a href="coleccion.html" class="nav-link">Colección</a></li>
+                <li><a href="historia.html" class="nav-link active">Maison</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link nav-cart">
+                        <svg class="bag-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 6V5C6 3.34315 7.34315 2 9 2H15C16.6569 2 18 3.34315 18 5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M3 8.5C3 7.11929 4.11929 6 5.5 6H18.5C19.8807 6 21 7.11929 21 8.5V19C21 20.6569 19.6569 22 18 22H6C4.34315 22 3 20.6569 3 19V8.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 10V12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                        Cesta
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="maison" class="section maison">
+            <div class="maison-container">
+                <div class="maison-hero">
+                    <div class="maison-hero-content">
+                        <span class="section-badge">La Maison</span>
+                        <h1 class="maison-title">La forma de<br>lo irrepetible</h1>
+                        <p class="maison-intro">
+                            Caostri nace para redefinir la forma en la que se entiende un bolso:
+                            una pieza de lujo silencioso, precisa y creada para acompañar.
+                        </p>
+                    </div>
+                    <div class="maison-hero-image">
+                        <div class="maison-product-frame">
+                            <img class="maison-product-photo" src="images/jardinderosas.png" alt="Bolso Un jardín de rosas de Caostri">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="maison-blocks">
+                    <article class="maison-block">
+                        <div class="block-number">01</div>
+                        <div class="block-content">
+                            <h2>Nuestra Historia</h2>
+                            <p>
+                                Fundada en 2016 por Sara Arranz, Caostri nace con una idea clara:
+                                redefinir la forma en la que se entiende un bolso.
+                            </p>
+                            <p>
+                                Desde sus inicios, la marca apuesta por una producción cuidada en
+                                talleres artesanales de Ubrique, donde la tradición marroquinera se une
+                                a un nivel de exigencia propio del lujo. Cada pieza se desarrolla con
+                                una atención absoluta al detalle, respetando los tiempos y procesos que
+                                permiten alcanzar un resultado que no necesita explicación.
+                            </p>
+                            <p>
+                                A lo largo de los años, Caostri ha evolucionado hasta posicionarse
+                                dentro del lujo silencioso, construyendo una identidad donde el valor no
+                                se comunica de forma evidente, sino que se percibe a través de la
+                                calidad, el diseño y la coherencia.
+                            </p>
+                            <p>
+                                Hoy, la marca no concibe el bolso como un accesorio, sino como una pieza
+                                que acompaña, ordena y forma parte de quien lo lleva.
+                            </p>
+                        </div>
+                        <div class="block-image">
+                            <img class="maison-block-photo" src="images/fotonuestrahistoria.png" alt="Nuestra historia en Caostri">
+                        </div>
+                    </article>
+
+                    <article class="maison-block reverse">
+                        <div class="block-number">02</div>
+                        <div class="block-content">
+                            <h2>Nuestra Visión</h2>
+                            <p>
+                                El lujo, cuando es real, no necesita explicarse.
+                            </p>
+                            <p>
+                                En Caostri, cada decisión —desde la elección del cuero hasta la
+                                estructura interna— responde a una búsqueda de equilibrio entre estética
+                                y funcionalidad. El resultado no es solo un objeto, sino una pieza que
+                                encaja de forma natural en la vida de quien la elige.
+                            </p>
+                        </div>
+                        <div class="block-image">
+                            <img class="maison-block-photo" src="images/fotonuestravision.png" alt="Nuestra visión en Caostri">
+                        </div>
+                    </article>
+
+                    <article class="maison-block">
+                        <div class="block-number">03</div>
+                        <div class="block-content">
+                            <h2>Artesanía & Detalle</h2>
+                            <p>
+                                Creemos en una forma de hacer las cosas que no se basa en el volumen,
+                                sino en el significado.
+                            </p>
+                            <div class="craftsmanship-features">
+                                <div class="craft-feature">
+                                    <span class="craft-icon">◆</span>
+                                    <span><strong>Artesanía</strong> — Cada pieza nace de un proceso cuidado, donde el detalle es esencial.</span>
+                                </div>
+                                <div class="craft-feature">
+                                    <span class="craft-icon">◆</span>
+                                    <span><strong>Exclusividad</strong> — No todo está hecho para todos, y ahí reside su valor.</span>
+                                </div>
+                                <div class="craft-feature">
+                                    <span class="craft-icon">◆</span>
+                                    <span><strong>Calidad</strong> — Trabajamos únicamente con cuero de plena flor, la capa más pura y resistente de la piel.</span>
+                                </div>
+                                <div class="craft-feature">
+                                    <span class="craft-icon">◆</span>
+                                    <span><strong>Precisión</strong> — Cada línea, cada costura, cada proporción tiene una razón. Nada es accesorio.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-image">
+                            <img class="maison-block-photo" src="images/fotoartesaniaydetalle.png" alt="Artesanía y detalle en Caostri">
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">CAOSTRI</span>
+                <p>SINCE 2016</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>La Maison</h4>
+                    <a href="historia.html">Nuestra Historia</a>
+                    <a href="historia.html">Artesanía</a>
+                    <a href="coleccion.html">Colecciones</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicio</h4>
+                    <a href="#">Contacto</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Cuidado del Cuero</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 CAOSTRI. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="cart-notification" id="cartNotification">
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+            <path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Añadido a tu cesta</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

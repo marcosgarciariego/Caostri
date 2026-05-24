@@ -49,7 +49,7 @@ function initNavigation() {
     CommonDOM.navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const section = link.getAttribute('data-section');
-            if (section) {
+            if (section && document.getElementById(section)) {
                 e.preventDefault();
                 scrollToSection(section);
                 closeMobileMenu();
@@ -62,7 +62,12 @@ function initNavigation() {
 }
 
 function updateActiveNavLink() {
-    const sections = ['private-edition', 'coleccion', 'maison'];
+    const sectionLinks = Array.from(CommonDOM.navLinks).filter(link => link.getAttribute('data-section'));
+    if (!sectionLinks.length) {
+        return;
+    }
+
+    const sections = sectionLinks.map(link => link.getAttribute('data-section'));
     const scrollPos = window.scrollY + 150;
 
     sections.forEach(sectionId => {
@@ -72,7 +77,7 @@ function updateActiveNavLink() {
             const sectionHeight = section.offsetHeight;
 
             if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                CommonDOM.navLinks.forEach(link => {
+                sectionLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('data-section') === sectionId) {
                         link.classList.add('active');
@@ -119,12 +124,17 @@ function saveCart() {
 }
 
 function addToCart(product) {
+    const productKey = product.optionKey || product.colorCode || product.color || 'default';
     const existingIndex = AppState.cart.findIndex(
-        item => item.id === product.id && item.color === product.color
+        item => item.id === product.id && (item.optionKey || item.colorCode || item.color || 'default') === productKey
     );
 
     if (existingIndex > -1) {
-        AppState.cart[existingIndex].quantity += 1;
+        AppState.cart[existingIndex] = {
+            ...AppState.cart[existingIndex],
+            ...product,
+            quantity: AppState.cart[existingIndex].quantity + 1
+        };
     } else {
         AppState.cart.push({ ...product, quantity: 1 });
     }
@@ -134,23 +144,23 @@ function addToCart(product) {
     showCartNotification('Añadido a tu cesta');
 }
 
-function removeFromCart(productId, color) {
+function removeFromCart(productId, optionKey) {
     AppState.cart = AppState.cart.filter(
-        item => !(item.id === productId && (item.color === color || item.colorCode === color))
+        item => !(item.id === productId && (item.optionKey === optionKey || item.colorCode === optionKey || item.color === optionKey))
     );
     saveCart();
     updateCartCount();
 }
 
-function updateCartItemQuantity(productId, color, change) {
+function updateCartItemQuantity(productId, optionKey, change) {
     const item = AppState.cart.find(
-        item => item.id === productId && (item.color === color || item.colorCode === color)
+        item => item.id === productId && (item.optionKey === optionKey || item.colorCode === optionKey || item.color === optionKey)
     );
 
     if (item) {
         item.quantity += change;
         if (item.quantity <= 0) {
-            removeFromCart(productId, item.colorCode || item.color);
+            removeFromCart(productId, item.optionKey || item.colorCode || item.color);
         } else {
             saveCart();
             updateCartCount();

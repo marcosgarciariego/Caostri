@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAOSTRI | Colección</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/monet.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="collection-page">
+    <header class="main-header" id="mainHeader">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">CAOSTRI</span>
+                <span class="logo-tagline">La forma de lo irrepetible</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Private Edition</a></li>
+                <li><a href="coleccion.html" class="nav-link active">Colección</a></li>
+                <li><a href="historia.html" class="nav-link">Maison</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link nav-cart">
+                        <svg class="bag-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 6V5C6 3.34315 7.34315 2 9 2H15C16.6569 2 18 3.34315 18 5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M3 8.5C3 7.11929 4.11929 6 5.5 6H18.5C19.8807 6 21 7.11929 21 8.5V19C21 20.6569 19.6569 22 18 22H6C4.34315 22 3 20.6569 3 19V8.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 10V12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                        Cesta
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="coleccion" class="section coleccion">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">La Colección</span>
+                    <h1 class="section-title">Bolsos de autor</h1>
+                    <p class="section-subtitle">
+                        Piezas creadas entre arte y marroquinería, con interiores a juego
+                        y proporciones pensadas para cada gesto.
+                    </p>
+                </div>
+
+                <div class="products-grid products-grid--collection">
+                    <article class="product-card" data-product-id="jardin-rosas">
+                        <a href="product.html?id=jardin-rosas" class="product-link">
+                            <div class="product-image product-image--real">
+                                <div class="product-photo-frame">
+                                    <img class="product-real-image" src="images/jardinderosas.png" alt="Bolso Un jardín de rosas" loading="lazy">
+                                </div>
+                                <div class="product-overlay">
+                                    <span class="view-product-btn">Ver Producto</span>
+                                </div>
+                                <span class="product-badge exclusive">Limitado</span>
+                            </div>
+                            <div class="product-info">
+                                <h2 class="product-name">Un jardín de rosas</h2>
+                                <p class="product-description">
+                                    Inspirada en la casa entre las rosas de Claude Monet, una pieza numerada de edición limitada.
+                                </p>
+                                <div class="product-footer">
+                                    <span class="product-price">Desde €8,500</span>
+                                    <span class="product-colors">Interior a juego</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card" data-product-id="equora-petit">
+                        <a href="product.html?id=equora-petit" class="product-link">
+                            <div class="product-image product-image--real">
+                                <div class="product-photo-frame">
+                                    <img class="product-real-image" src="images/petitÉquora.png" alt="Bolso Équora Petit" loading="lazy">
+                                </div>
+                                <div class="product-overlay">
+                                    <span class="view-product-btn">Ver Producto</span>
+                                </div>
+                                <span class="product-badge best-seller">Best seller</span>
+                            </div>
+                            <div class="product-info">
+                                <h2 class="product-name">Équora Petit</h2>
+                                <p class="product-description">
+                                    Formato pequeño de líneas estructuradas, cierre superior y presencia sobria.
+                                </p>
+                                <div class="product-footer">
+                                    <span class="product-price">€3,200</span>
+                                    <span class="product-colors">Petit · 4 colores</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card" data-product-id="fluvia-petit">
+                        <a href="product.html?id=fluvia-petit" class="product-link">
+                            <div class="product-image product-image--real">
+                                <div class="product-photo-frame">
+                                    <img class="product-real-image" src="images/petitfluvia.png" alt="Bolso Fluvia Petit" loading="lazy">
+                                </div>
+                                <div class="product-overlay">
+                                    <span class="view-product-btn">Ver Producto</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h2 class="product-name">Fluvia Petit</h2>
+                                <p class="product-description">
+                                    Silueta suave de hombro, compacta y ligera, con interior artesanal coordinado.
+                                </p>
+                                <div class="product-footer">
+                                    <span class="product-price">€2,700</span>
+                                    <span class="product-colors">Petit · 4 colores</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card" data-product-id="orbea-petit">
+                        <a href="product.html?id=orbea-petit" class="product-link">
+                            <div class="product-image product-image--real">
+                                <div class="product-photo-frame">
+                                    <img class="product-real-image" src="images/petitOrbea.png" alt="Bolso Orbea Petit" loading="lazy">
+                                </div>
+                                <div class="product-overlay">
+                                    <span class="view-product-btn">Ver Producto</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h2 class="product-name">Orbea Petit</h2>
+                                <p class="product-description">
+                                    Una pieza pequeña de volumen redondeado y construcción limpia para uso diario.
+                                </p>
+                                <div class="product-footer">
+                                    <span class="product-price">€2,400</span>
+                                    <span class="product-colors">Petit · 4 colores</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card" data-product-id="equora-grand">
+                        <a href="product.html?id=equora-grand" class="product-link">
+                            <div class="product-image product-image--real">
+                                <div class="product-photo-frame">
+                                    <img class="product-real-image" src="images/GrandÉquora.png" alt="Bolso Équora Grand" loading="lazy">
+                                </div>
+                                <div class="product-overlay">
+                                    <span class="view-product-btn">Ver Producto</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h2 class="product-name">Équora Grand</h2>
+                                <p class="product-description">
+                                    Versión grande de Équora, con más amplitud y el mismo interior característico.
+                                </p>
+                                <div class="product-footer">
+                                    <span class="product-price">€4,100</span>
+                                    <span class="product-colors">Grand · 4 colores</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card" data-product-id="fluvia-grand">
+                        <a href="product.html?id=fluvia-grand" class="product-link">
+                            <div class="product-image product-image--real">
+                                <div class="product-photo-frame">
+                                    <img class="product-real-image" src="images/Grandfluvia.png" alt="Bolso Fluvia Grand" loading="lazy">
+                                </div>
+                                <div class="product-overlay">
+                                    <span class="view-product-btn">Ver Producto</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h2 class="product-name">Fluvia Grand</h2>
+                                <p class="product-description">
+                                    Proporción grande, fluida y envolvente, con asa escultórica y acabado de atelier.
+                                </p>
+                                <div class="product-footer">
+                                    <span class="product-price">€3,200</span>
+                                    <span class="product-colors">Grand · 4 colores</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card" data-product-id="orbea-grand">
+                        <a href="product.html?id=orbea-grand" class="product-link">
+                            <div class="product-image product-image--real">
+                                <div class="product-photo-frame">
+                                    <img class="product-real-image" src="images/GrandOrbea.png" alt="Bolso Orbea Grand" loading="lazy">
+                                </div>
+                                <div class="product-overlay">
+                                    <span class="view-product-btn">Ver Producto</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h2 class="product-name">Orbea Grand</h2>
+                                <p class="product-description">
+                                    El formato grande de Orbea conserva su gesto redondeado con una capacidad mayor.
+                                </p>
+                                <div class="product-footer">
+                                    <span class="product-price">€2,900</span>
+                                    <span class="product-colors">Grand · 4 colores</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">CAOSTRI</span>
+                <p>SINCE 2016</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>La Maison</h4>
+                    <a href="historia.html">Nuestra Historia</a>
+                    <a href="historia.html">Artesanía</a>
+                    <a href="coleccion.html">Colecciones</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicio</h4>
+                    <a href="#">Contacto</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Cuidado del Cuero</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 CAOSTRI. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="cart-notification" id="cartNotification">
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+            <path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Añadido a tu cesta</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

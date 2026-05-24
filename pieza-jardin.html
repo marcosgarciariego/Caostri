@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un jardín de rosas | CAOSTRI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/monet.png">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body class="piece-page">
+    <header class="main-header" id="mainHeader">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">CAOSTRI</span>
+                <span class="logo-tagline">La forma de lo irrepetible</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Private Edition</a></li>
+                <li><a href="coleccion.html" class="nav-link">Colección</a></li>
+                <li><a href="historia.html" class="nav-link">Maison</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link nav-cart">
+                        <img class="cart-logo" src="images/logocarrito.jpeg" alt="" aria-hidden="true">
+                        <span class="cart-count" id="cartCount">0</span>
+                        Cesta
+                    </a>
+                </li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="piece-showcase" aria-labelledby="pieceTitle">
+            <div class="piece-showcase-copy">
+                <span class="hero-badge">Edición limitada</span>
+                <h1 class="piece-showcase-title" id="pieceTitle">Un jardín de rosas</h1>
+                <p class="piece-showcase-text">
+                    Una pieza numerada creada entre arte y deseo, con cuero de plena flor,
+                    construcción artesanal y un interior pensado como parte de la obra.
+                </p>
+                <a href="product.html?id=jardin-rosas" class="btn btn-primary">Comprar la pieza</a>
+            </div>
+
+            <div class="piece-showcase-visual">
+                <div class="piece-model-stage hero-model-stage">
+                    <div id="heroModelViewer" class="hero-model-viewer" aria-label="Bolso Un jardín de rosas girando"></div>
+                    <div class="hero-model-overlay" id="heroModelStatus">Cargando bolso 3D...</div>
+                    <div class="hero-model-hint" id="heroModelHint">Arrastra para girar</div>
+                </div>
+
+                <div class="hero-features piece-features" aria-label="Datos de la edición limitada">
+                    <div class="feature">
+                        <span class="feature-number" data-target="100">0%</span>
+                        <span class="feature-text">Cuero plena flor</span>
+                    </div>
+                    <span class="feature-divider" aria-hidden="true"></span>
+                    <div class="feature">
+                        <span class="feature-number" data-target="300">0h</span>
+                        <span class="feature-text">Trabajo artesanal</span>
+                    </div>
+                    <span class="feature-divider" aria-hidden="true"></span>
+                    <div class="feature">
+                        <span class="feature-number feature-number--edition">Limited</span>
+                        <span class="feature-text">Edition</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/hero-model.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -6,6 +6,7 @@ const HERO_FRAMES = Array.from(
     { length: 24 },
     (_, index) => `./images/hero-model-frames/frame-${String(index).padStart(2, '0')}.png`
 );
+const HERO_FRONT_FRAME = 12;
 
 if (!viewer || !stage || !status) {
     throw new Error('Hero 3D viewer container not found.');
@@ -103,7 +104,7 @@ async function initHeroModel() {
     const loader = new FBXLoader();
     const modelState = {
         wrapper: null,
-        baseRotationY: Math.PI * 0.92
+        baseRotationY: Math.PI * 1.92
     };
 
     await new Promise((resolve, reject) => {
@@ -271,10 +272,11 @@ function initSpriteFallback(message = 'Visor local listo.') {
     sprite.draggable = false;
     viewer.appendChild(sprite);
 
-    let currentFrame = 0;
+    let currentFrame = HERO_FRONT_FRAME;
     let dragRemainder = 0;
     let isDragging = false;
     let lastX = 0;
+    let lastAutoFrameTime = 0;
 
     const updateFrame = () => {
         sprite.src = HERO_FRAMES[currentFrame];
@@ -286,9 +288,19 @@ function initSpriteFallback(message = 'Visor local listo.') {
         updateFrame();
     };
 
+    const autoRotate = (timestamp) => {
+        if (!isDragging && timestamp - lastAutoFrameTime > 110) {
+            advanceFrame(1);
+            lastAutoFrameTime = timestamp;
+        }
+
+        requestAnimationFrame(autoRotate);
+    };
+
     sprite.addEventListener('load', () => {
         stage.classList.add('is-ready');
         status.textContent = message;
+        requestAnimationFrame(autoRotate);
     }, { once: true });
 
     sprite.addEventListener('error', () => {

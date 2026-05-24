@@ -7,87 +7,109 @@
 // DATOS DE PRODUCTOS
 // =============================================
 const ProductsData = {
-    signature: {
-        id: 'signature',
-        name: 'Signature Monet',
-        badge: 'Signature',
-        tagline: 'Nuestra pieza icónica, símbolo de elegancia atemporal',
-        description: 'El Signature Monet encarna la esencia de nuestra maison: líneas puras, proporciones perfectas y una atención obsesiva al detalle. Confeccionado íntegramente a mano en nuestro atelier parisino.',
+    'jardin-rosas': {
+        id: 'jardin-rosas',
+        name: 'Un jardín de rosas',
+        badge: 'Limitado',
+        tagline: 'Una edición numerada inspirada en la casa entre las rosas',
+        description: 'Un jardín de rosas nace del diálogo entre el paisaje de Claude Monet y la precisión de la marroquinería contemporánea. Una pieza artística, delicada y limitada.',
+        image: 'images/jardinderosas.png',
+        galleryImages: [
+            { src: 'images/jardindefloresdetras.png', alt: 'Vista trasera de Un jardín de rosas' },
+            { src: 'images/jardinderosasinterior.png', alt: 'Interior de Un jardín de rosas' }
+        ],
         dimensions: { width: '28 cm', height: '20 cm', depth: '12 cm', handle: '22 cm' },
-        colors: {
-            noir: 2450, camel: 2450, burgundy: 2550,
-            navy: 2450, ivory: 2650, olive: 2550
-        },
+        colors: { noir: 8500, ivory: 8500 },
         defaultColor: 'noir'
     },
-    classic: {
-        id: 'classic',
-        name: 'Le Monet Classic',
-        badge: 'Bestseller',
-        tagline: 'Elegancia estructurada con cierre de cremallera dorada',
-        description: 'El Classic Monet es la expresión perfecta de la sofisticación discreta. Su silueta estructurada y su cierre de cremallera YKK Gold lo convierten en el compañero ideal para cada ocasión.',
-        dimensions: { width: '32 cm', height: '24 cm', depth: '14 cm', handle: '18 cm' },
-        colors: { noir: 1890, camel: 1890, burgundy: 1990, navy: 1890 },
+    'equora-petit': {
+        id: 'equora-petit',
+        name: 'Équora Petit',
+        badge: 'Best seller',
+        tagline: 'Formato pequeño, estructura limpia y cierre superior',
+        description: 'Équora Petit concentra la arquitectura de la línea en una silueta compacta. Comparte interior con Équora Grand y se presenta en cuatro colores.',
+        image: 'images/petitÉquora.png',
+        galleryImages: [
+            { src: 'images/petitequoradetras.png', alt: 'Vista trasera de Équora Petit' },
+            { src: 'images/equorainterior.png', alt: 'Interior Équora' }
+        ],
+        dimensions: { width: '24 cm', height: '18 cm', depth: '10 cm', handle: '16 cm' },
+        colors: { noir: 3200, camel: 3200, burgundy: 3200, navy: 3200 },
         defaultColor: 'noir'
     },
-    tote: {
-        id: 'tote',
-        name: 'Le Monet Tote',
-        badge: 'Spacieux',
-        tagline: 'Amplitud y elegancia en perfecta armonía',
-        description: 'El Tote Monet ofrece generoso espacio sin sacrificar la elegancia. Con doble asa reforzada y bolsillo interior con cremallera, es perfecto para la mujer moderna que no renuncia al estilo.',
-        dimensions: { width: '38 cm', height: '30 cm', depth: '16 cm', handle: '24 cm' },
-        colors: { noir: 2150, camel: 2150, burgundy: 2250, navy: 2150, olive: 2250 },
+    'fluvia-petit': {
+        id: 'fluvia-petit',
+        name: 'Fluvia Petit',
+        badge: 'Petit',
+        tagline: 'Una pieza ligera con caída suave y gesto escultórico',
+        description: 'Fluvia Petit combina una silueta de hombro fluida con un interior artesanal coordinado. Una proporción pequeña para llevar lo esencial con calma.',
+        image: 'images/petitfluvia.png',
+        galleryImages: [
+            { src: 'images/Petitfluviadetras.png', alt: 'Vista trasera de Fluvia Petit' },
+            { src: 'images/fluviainterior.png', alt: 'Interior Fluvia' }
+        ],
+        dimensions: { width: '25 cm', height: '16 cm', depth: '9 cm', strap: '44 cm' },
+        colors: { noir: 2700, camel: 2700, burgundy: 2700, navy: 2700 },
         defaultColor: 'camel'
     },
-    pochette: {
-        id: 'pochette',
-        name: 'La Pochette Monet',
-        badge: 'Nouveau',
-        tagline: 'Glamour nocturno con cadena desmontable',
-        description: 'La Pochette Monet es la encarnación del glamour contemporáneo. Su cadena bañada en oro puede llevarse al hombro o guardarse para usar como clutch de mano.',
-        dimensions: { width: '24 cm', height: '14 cm', depth: '6 cm', chain: '120 cm' },
-        colors: { noir: 1290, burgundy: 1390, navy: 1290, ivory: 1450 },
+    'orbea-petit': {
+        id: 'orbea-petit',
+        name: 'Orbea Petit',
+        badge: 'Petit',
+        tagline: 'Volumen redondeado en formato compacto',
+        description: 'Orbea Petit trabaja una forma redondeada, sobria y funcional. Su interior comparte la misma composición visual que Orbea Grand.',
+        image: 'images/petitOrbea.png',
+        galleryImages: [
+            { src: 'images/petitorbeadetras.png', alt: 'Vista trasera de Orbea Petit' },
+            { src: 'images/orbeainterior.png', alt: 'Interior Orbea' }
+        ],
+        dimensions: { width: '24 cm', height: '20 cm', depth: '8 cm', strap: '42 cm' },
+        colors: { noir: 2400, camel: 2400, burgundy: 2400, navy: 2400 },
         defaultColor: 'noir'
     },
-    mini: {
-        id: 'mini',
-        name: 'Le Mini Monet',
-        badge: 'Compact',
-        tagline: 'Lo esencial, con estilo inigualable',
-        description: 'El Mini Monet demuestra que el lujo no necesita grandes dimensiones. Con correa ajustable y cierre frontal, es perfecto para llevar solo lo esencial con máxima elegancia.',
-        dimensions: { width: '20 cm', height: '15 cm', depth: '8 cm', strap: '60-120 cm' },
-        colors: { noir: 1450, camel: 1450, burgundy: 1550, navy: 1450, ivory: 1650, olive: 1550 },
-        defaultColor: 'navy'
+    'equora-grand': {
+        id: 'equora-grand',
+        name: 'Équora Grand',
+        badge: 'Grand',
+        tagline: 'La arquitectura Équora en su proporción más amplia',
+        description: 'Équora Grand amplía la silueta del modelo Petit sin perder precisión. Su interior mantiene la misma identidad de la familia Équora.',
+        image: 'images/GrandÉquora.png',
+        galleryImages: [
+            { src: 'images/grandequoradetras.png', alt: 'Vista trasera de Équora Grand' },
+            { src: 'images/equorainterior.png', alt: 'Interior Équora' }
+        ],
+        dimensions: { width: '36 cm', height: '27 cm', depth: '14 cm', handle: '22 cm' },
+        colors: { noir: 4100, camel: 4100, burgundy: 4100, navy: 4100 },
+        defaultColor: 'noir'
     },
-    voyage: {
-        id: 'voyage',
-        name: 'Le Voyage Monet',
-        badge: 'Exclusivo',
-        tagline: 'El arte de viajar con distinción',
-        description: 'El Voyage Monet es el compañero perfecto para escapadas de fin de semana. Con múltiples compartimentos, doble cremallera con candado y base reforzada, combina funcionalidad y lujo.',
-        dimensions: { width: '48 cm', height: '28 cm', depth: '22 cm', handle: '20 cm' },
-        colors: { noir: 3200, camel: 3200, olive: 3350 },
-        defaultColor: 'olive'
+    'fluvia-grand': {
+        id: 'fluvia-grand',
+        name: 'Fluvia Grand',
+        badge: 'Grand',
+        tagline: 'Mayor amplitud para una silueta fluida de atelier',
+        description: 'Fluvia Grand conserva la suavidad del modelo Petit y añade una capacidad mayor. El interior Fluvia se repite en ambas proporciones.',
+        image: 'images/Grandfluvia.png',
+        galleryImages: [
+            { src: 'images/Grandfluviadetras.png', alt: 'Vista trasera de Fluvia Grand' },
+            { src: 'images/fluviainterior.png', alt: 'Interior Fluvia' }
+        ],
+        dimensions: { width: '34 cm', height: '22 cm', depth: '12 cm', strap: '52 cm' },
+        colors: { noir: 3200, camel: 3200, burgundy: 3200, navy: 3200 },
+        defaultColor: 'burgundy'
     },
-    bucket: {
-        id: 'bucket',
-        name: 'Le Seau Monet',
-        badge: 'Artisanal',
-        tagline: 'Silueta icónica con cierre de cordón',
-        description: 'El Seau Monet reinterpreta la forma clásica del bucket bag con la exquisitez de la artesanía francesa. Su cierre de cordón en piel y el bolsillo interior con cremallera lo hacen único.',
-        dimensions: { width: '26 cm', height: '28 cm', depth: '18 cm', strap: '50-110 cm' },
-        colors: { noir: 1750, camel: 1750, burgundy: 1850, navy: 1750, olive: 1850 },
-        defaultColor: 'camel'
-    },
-    baguette: {
-        id: 'baguette',
-        name: 'La Baguette Monet',
-        badge: 'Nouveau',
-        tagline: 'Silueta alargada, elegancia infinita',
-        description: 'La Baguette Monet rinde homenaje a las formas clásicas con un toque contemporáneo. Su asa corta permite llevarla bajo el brazo o al hombro con igual distinción.',
-        dimensions: { width: '28 cm', height: '14 cm', depth: '8 cm', handle: '20 cm' },
-        colors: { noir: 1650, camel: 1650, burgundy: 1750, ivory: 1850 },
+    'orbea-grand': {
+        id: 'orbea-grand',
+        name: 'Orbea Grand',
+        badge: 'Grand',
+        tagline: 'La forma Orbea con más presencia y capacidad',
+        description: 'Orbea Grand lleva el volumen redondeado de la familia a una escala más generosa. Comparte interior con Orbea Petit.',
+        image: 'images/GrandOrbea.png',
+        galleryImages: [
+            { src: 'images/grandorbeadetras.png', alt: 'Vista trasera de Orbea Grand' },
+            { src: 'images/orbeainterior.png', alt: 'Interior Orbea' }
+        ],
+        dimensions: { width: '33 cm', height: '28 cm', depth: '11 cm', strap: '50 cm' },
+        colors: { noir: 2900, camel: 2900, burgundy: 2900, navy: 2900 },
         defaultColor: 'camel'
     }
 };
@@ -96,11 +118,24 @@ const ProductsData = {
 // ESTADO DE LA PÁGINA
 // =============================================
 let currentProduct = null;
-let currentColor = 'noir';
 let isAutoRotating = true;
 let rotationAngle = 0;
 let isDragging = false;
 let startX = 0;
+let productPhotos = [];
+let activeProductPhotoIndex = 0;
+let imageColorVersion = 0;
+
+const ImageColorTargets = {
+    noir: null,
+    camel: { r: 196, g: 167, b: 125 },
+    burgundy: { r: 114, g: 47, b: 55 },
+    navy: { r: 30, g: 58, b: 95 },
+    ivory: { r: 226, g: 216, b: 198 },
+    olive: { r: 92, g: 107, b: 74 }
+};
+
+const recoloredImageCache = new Map();
 
 // =============================================
 // ELEMENTOS DEL DOM
@@ -108,8 +143,11 @@ let startX = 0;
 const ProductDOM = {
     bag3D: document.getElementById('bag3D'),
     bag3DViewer: document.getElementById('bag3DViewer'),
-    colorSwatches: document.getElementById('colorSwatches'),
-    selectedColorName: document.getElementById('selectedColorName'),
+    productDetailPhoto: document.getElementById('productDetailPhoto'),
+    productPhotoThumbs: document.getElementById('productPhotoThumbs'),
+    handleOptionCheckboxes: document.querySelectorAll('[data-handle-option]'),
+    headphonePocket: document.getElementById('headphonePocket'),
+    optionCheckboxes: document.querySelectorAll('.option-checkbox input'),
     productTitle: document.getElementById('productTitle'),
     productTagline: document.getElementById('productTagline'),
     productPrice: document.getElementById('productPrice'),
@@ -132,16 +170,15 @@ const ProductDOM = {
 function initProductPage() {
     // Obtener ID del producto de la URL
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id') || 'signature';
+    const productId = urlParams.get('id') || 'jardin-rosas';
 
     // Cargar datos del producto
-    currentProduct = ProductsData[productId] || ProductsData.signature;
-    currentColor = currentProduct.defaultColor;
+    currentProduct = ProductsData[productId] || ProductsData['jardin-rosas'];
 
     // Actualizar UI
     updateProductUI();
-    updateColorSwatches();
-    init3DViewer();
+    renderProductGallery();
+    initProductOptions();
     initAccordions();
     initAddToCart();
 
@@ -171,7 +208,7 @@ function updateProductUI() {
     }
 
     // Actualizar título de la página
-    document.title = `${currentProduct.name} | MONET`;
+    document.title = `${currentProduct.name} | CAOSTRI`;
 
     // Precio
     updatePrice();
@@ -181,10 +218,22 @@ function updateProductUI() {
 }
 
 function updatePrice() {
-    const price = currentProduct.colors[currentColor];
+    const price = getProductPrice(currentProduct);
     if (ProductDOM.productPrice) {
-        ProductDOM.productPrice.textContent = `€${price.toLocaleString()}`;
+        ProductDOM.productPrice.textContent = formatProductPrice(price);
     }
+}
+
+function getProductPrice(product) {
+    if (typeof product.price === 'number') {
+        return product.price;
+    }
+
+    return Object.values(product.colors || {})[0] || 0;
+}
+
+function formatProductPrice(price) {
+    return `€${price.toLocaleString('en-US')}`;
 }
 
 function updateDimensions() {
@@ -209,6 +258,128 @@ function updateDimensions() {
             </div>
         `;
     }
+}
+
+function renderProductGallery() {
+    if (!ProductDOM.productDetailPhoto || !ProductDOM.productPhotoThumbs) return;
+
+    productPhotos = [
+        { src: currentProduct.image, alt: currentProduct.name },
+        ...(currentProduct.galleryImages || [])
+    ].filter(photo => photo.src);
+    activeProductPhotoIndex = 0;
+
+    if (!productPhotos.length) return;
+
+    ProductDOM.productDetailPhoto.src = productPhotos[0].src;
+    ProductDOM.productDetailPhoto.alt = productPhotos[0].alt || currentProduct.name;
+
+    ProductDOM.productPhotoThumbs.innerHTML = productPhotos.map((photo, index) => `
+        <button class="product-photo-thumb${index === 0 ? ' active' : ''}" type="button" data-photo-index="${index}" aria-label="${photo.alt || currentProduct.name}">
+            <img src="${photo.src}" alt="${photo.alt || currentProduct.name}">
+        </button>
+    `).join('');
+
+    ProductDOM.productPhotoThumbs.querySelectorAll('.product-photo-thumb').forEach(button => {
+        button.addEventListener('click', () => {
+            const photo = productPhotos[Number(button.dataset.photoIndex)];
+            if (!photo) return;
+
+            activeProductPhotoIndex = Number(button.dataset.photoIndex);
+            ProductDOM.productDetailPhoto.src = photo.src;
+            ProductDOM.productDetailPhoto.alt = photo.alt || currentProduct.name;
+            ProductDOM.productPhotoThumbs.querySelectorAll('.product-photo-thumb').forEach(thumb => thumb.classList.remove('active'));
+            button.classList.add('active');
+            updateProductImageColor();
+        });
+    });
+
+    updateProductImageColor();
+}
+
+async function updateProductImageColor() {
+    if (!ProductDOM.productDetailPhoto || !ProductDOM.productPhotoThumbs || !productPhotos.length) return;
+
+    const colorVersion = ++imageColorVersion;
+    const activePhoto = productPhotos[activeProductPhotoIndex] || productPhotos[0];
+
+    ProductDOM.productDetailPhoto.src = activePhoto.src;
+    ProductDOM.productDetailPhoto.alt = activePhoto.alt || currentProduct.name;
+
+    const thumbImages = ProductDOM.productPhotoThumbs.querySelectorAll('.product-photo-thumb img');
+    productPhotos.forEach((photo, index) => {
+        const thumbImage = thumbImages[index];
+        if (!thumbImage) return;
+
+        if (colorVersion !== imageColorVersion) return;
+        thumbImage.src = photo.src;
+    });
+}
+
+async function getColorizedImageSrc(src, color) {
+    const target = ImageColorTargets[color];
+    if (!target) return src;
+
+    const cacheKey = `${src}|${color}`;
+    if (recoloredImageCache.has(cacheKey)) {
+        return recoloredImageCache.get(cacheKey);
+    }
+
+    try {
+        const image = await loadImage(src);
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
+        ctx.drawImage(image, 0, 0);
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+
+        for (let i = 0; i < data.length; i += 4) {
+            const alpha = data[i + 3];
+            if (alpha < 12) continue;
+
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+            const max = Math.max(r, g, b);
+            const min = Math.min(r, g, b);
+            const saturation = max === 0 ? 0 : (max - min) / max;
+            const luminance = (0.2126 * r) + (0.7152 * g) + (0.0722 * b);
+            const isBackground = luminance > 238 && saturation < 0.08;
+            const isLeatherTone = luminance < 205 && saturation < 0.34;
+
+            if (isBackground || !isLeatherTone) continue;
+
+            const shade = clamp(0.35 + (luminance / 255) * 1.08, 0.28, 1.24);
+            data[i] = clamp(Math.round(target.r * shade), 0, 255);
+            data[i + 1] = clamp(Math.round(target.g * shade), 0, 255);
+            data[i + 2] = clamp(Math.round(target.b * shade), 0, 255);
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        const dataUrl = canvas.toDataURL('image/png');
+        recoloredImageCache.set(cacheKey, dataUrl);
+        return dataUrl;
+    } catch (error) {
+        console.warn('CAOSTRI - No se pudo recolorear la imagen:', src, error);
+        return src;
+    }
+}
+
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = () => resolve(image);
+        image.onerror = reject;
+        image.src = src;
+    });
+}
+
+function clamp(value, min = 0, max = 255) {
+    return Math.min(max, Math.max(min, value));
 }
 
 // =============================================
@@ -370,8 +541,66 @@ function handleDragEnd() {
 
 function update3DColor() {
     if (ProductDOM.bag3D) {
-        ProductDOM.bag3D.setAttribute('data-color', currentColor);
+        ProductDOM.bag3D.setAttribute('data-color', 'noir');
     }
+    updateProductImageColor();
+}
+
+// =============================================
+// PERSONALIZACION
+// =============================================
+
+function initProductOptions() {
+    const handleCheckboxes = Array.from(ProductDOM.handleOptionCheckboxes || []);
+
+    const syncOptionLabels = () => {
+        ProductDOM.optionCheckboxes?.forEach(input => {
+            input.closest('.option-checkbox')?.classList.toggle('is-selected', input.checked);
+        });
+    };
+
+    handleCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                handleCheckboxes.forEach(otherCheckbox => {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            } else if (!handleCheckboxes.some(otherCheckbox => otherCheckbox.checked)) {
+                checkbox.checked = true;
+            }
+
+            syncOptionLabels();
+        });
+    });
+
+    ProductDOM.headphonePocket?.addEventListener('change', syncOptionLabels);
+    syncOptionLabels();
+}
+
+function getSelectedProductOptions() {
+    const selectedHandle = Array
+        .from(ProductDOM.handleOptionCheckboxes || [])
+        .find(checkbox => checkbox.checked);
+    const hasHeadphonePocket = Boolean(ProductDOM.headphonePocket?.checked);
+
+    return {
+        handleSize: selectedHandle?.value || 'Asa pequeña',
+        headphonePocket: hasHeadphonePocket,
+        pocketLabel: hasHeadphonePocket ? 'Con bolsillo para auricular' : 'Sin bolsillo para auricular'
+    };
+}
+
+function getProductOptionKey(options) {
+    return [
+        options.handleSize === 'Asa grande' ? 'handle-large' : 'handle-small',
+        options.headphonePocket ? 'headphone-pocket' : 'no-headphone-pocket'
+    ].join('|');
+}
+
+function getProductOptionSummary(options) {
+    return `${options.handleSize} · ${options.pocketLabel}`;
 }
 
 // =============================================
@@ -408,14 +637,17 @@ function initAccordions() {
 
 function initAddToCart() {
     ProductDOM.addToCartBtn?.addEventListener('click', () => {
-        const colorNames = window.MonetApp?.AppState?.colorNames || {};
+        const options = getSelectedProductOptions();
 
         const product = {
             id: currentProduct.id,
             name: currentProduct.name,
-            price: currentProduct.colors[currentColor],
-            color: colorNames[currentColor] || currentColor,
-            colorCode: currentColor
+            price: getProductPrice(currentProduct),
+            options,
+            optionKey: getProductOptionKey(options),
+            optionSummary: getProductOptionSummary(options),
+            image: currentProduct.image,
+            galleryImages: currentProduct.galleryImages || []
         };
 
         if (window.MonetApp?.addToCart) {

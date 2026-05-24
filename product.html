@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto | MONET</title>
+    <title>Producto | CAOSTRI</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Estilos -->
+    <link rel="icon" type="image/png" href="images/monet.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="product-page">
@@ -25,9 +26,9 @@
             </a>
 
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#private-edition" class="nav-link">Private Edition</a></li>
-                <li><a href="index.html#coleccion" class="nav-link">Colección</a></li>
-                <li><a href="index.html#maison" class="nav-link">Maison</a></li>
+                <li><a href="index.html" class="nav-link">Private Edition</a></li>
+                <li><a href="coleccion.html" class="nav-link active">Colección</a></li>
+                <li><a href="historia.html" class="nav-link">Maison</a></li>
                 <li>
                     <a href="cart.html" class="nav-link nav-cart">
                         <svg class="bag-icon" viewBox="0 0 24 24" fill="none">
@@ -56,7 +57,7 @@
         <div class="breadcrumb-container">
             <a href="index.html">Inicio</a>
             <span class="breadcrumb-sep">/</span>
-            <a href="index.html#coleccion">Colección</a>
+            <a href="coleccion.html">Colección</a>
             <span class="breadcrumb-sep">/</span>
             <span class="breadcrumb-current" id="breadcrumbProduct">Producto</span>
         </div>
@@ -67,76 +68,12 @@
          ============================================ -->
     <main class="product-detail">
         <div class="product-detail-container">
-            <!-- Columna izquierda: Visor 3D -->
+            <!-- Columna izquierda: Galería del producto -->
             <div class="product-gallery">
-                <div class="bag-3d-viewer" id="bag3DViewer">
-                    <div class="bag-3d" id="bag3D" data-color="noir">
-                        <!-- Cara frontal -->
-                        <div class="bag-face bag-front">
-                            <div class="bag-detail-flap"></div>
-                            <div class="bag-detail-clasp">
-                                <div class="clasp-inner"></div>
-                            </div>
-                            <div class="bag-detail-pocket"></div>
-                            <div class="bag-logo">M</div>
-                        </div>
-                        <!-- Cara trasera -->
-                        <div class="bag-face bag-back">
-                            <div class="bag-back-pocket"></div>
-                            <div class="bag-back-zipper"></div>
-                        </div>
-                        <!-- Cara izquierda -->
-                        <div class="bag-face bag-left">
-                            <div class="bag-side-detail"></div>
-                        </div>
-                        <!-- Cara derecha -->
-                        <div class="bag-face bag-right">
-                            <div class="bag-side-detail"></div>
-                        </div>
-                        <!-- Cara superior -->
-                        <div class="bag-face bag-top">
-                            <div class="bag-handle-3d"></div>
-                        </div>
-                        <!-- Cara inferior -->
-                        <div class="bag-face bag-bottom">
-                            <div class="bag-feet"></div>
-                        </div>
-                    </div>
+                <div class="product-photo-viewer" id="productPhotoViewer">
+                    <img class="product-detail-photo" id="productDetailPhoto" src="images/jardinderosas.png" alt="Un jardín de rosas">
                 </div>
-
-                <!-- Controles de rotación -->
-                <div class="viewer-controls">
-                    <button class="control-btn" id="rotateLeft" title="Girar izquierda">
-                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                            <path d="M2.5 12C2.5 7.02944 6.52944 3 11.5 3C16.4706 3 20.5 7.02944 20.5 12C20.5 16.9706 16.4706 21 11.5 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M6 3L2 7L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="control-btn" id="toggleRotation" title="Auto rotación">
-                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20" id="playIcon">
-                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M9.5 8.96533C9.5 8.48805 9.5 8.24941 9.59974 8.11618C9.68666 8.00007 9.81971 7.92744 9.96438 7.9171C10.1304 7.90525 10.3311 8.03429 10.7326 8.29239L15.4532 11.3271C15.8016 11.551 15.9758 11.663 16.0359 11.8054C16.088 11.9298 16.088 12.0702 16.0359 12.1946C15.9758 12.337 15.8016 12.449 15.4532 12.6729L10.7326 15.7076C10.3311 15.9657 10.1304 16.0948 9.96438 16.0829C9.81971 16.0726 9.68666 15.9999 9.59974 15.8838C9.5 15.7506 9.5 15.512 9.5 15.0347V8.96533Z" fill="currentColor"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20" id="pauseIcon" style="display: none;">
-                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M9 9V15M15 9V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <button class="control-btn" id="rotateRight" title="Girar derecha">
-                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                            <path d="M21.5 12C21.5 7.02944 17.4706 3 12.5 3C7.52944 3 3.5 7.02944 3.5 12C3.5 16.9706 7.52944 21 12.5 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M18 3L22 7L18 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-
-                <p class="viewer-hint">
-                    <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
-                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M12 2C6.47715 2 2 6.47715 2 12C2 14.7614 3.11929 17.2614 4.92893 19.0711" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"/>
-                    </svg>
-                    Arrastra para girar el bolso en 360°
-                </p>
+                <div class="product-photo-thumbs" id="productPhotoThumbs" aria-label="Vistas del producto"></div>
             </div>
 
             <!-- Columna derecha: Información del producto -->
@@ -154,32 +91,31 @@
                     <span class="product-tax">IVA incluido</span>
                 </div>
 
-                <!-- Selector de color -->
-                <div class="color-selector">
-                    <div class="selector-header">
-                        <span class="selector-label">Color</span>
-                        <span class="selected-color-name" id="selectedColorName">Noir Élégant</span>
-                    </div>
-                    <div class="color-swatches" id="colorSwatches">
-                        <button class="color-swatch active" data-color="noir" data-price="2450" style="--swatch-color: #1a1a1a;" title="Noir Élégant">
-                            <span class="swatch-check">✓</span>
-                        </button>
-                        <button class="color-swatch" data-color="camel" data-price="2450" style="--swatch-color: #c4a77d;" title="Camel Classique">
-                            <span class="swatch-check">✓</span>
-                        </button>
-                        <button class="color-swatch" data-color="burgundy" data-price="2550" style="--swatch-color: #722f37;" title="Bordeaux Prestige">
-                            <span class="swatch-check">✓</span>
-                        </button>
-                        <button class="color-swatch" data-color="navy" data-price="2450" style="--swatch-color: #1e3a5f;" title="Bleu Nuit">
-                            <span class="swatch-check">✓</span>
-                        </button>
-                        <button class="color-swatch" data-color="ivory" data-price="2650" style="--swatch-color: #f5f0e8;" title="Ivoire Pur">
-                            <span class="swatch-check">✓</span>
-                        </button>
-                        <button class="color-swatch" data-color="olive" data-price="2550" style="--swatch-color: #5c6b4a;" title="Olive Toscan">
-                            <span class="swatch-check">✓</span>
-                        </button>
-                    </div>
+                <!-- Personalización -->
+                <div class="product-options" aria-labelledby="customOptionsTitle">
+                    <h2 class="option-section-title" id="customOptionsTitle">Personalización</h2>
+
+                    <fieldset class="option-group">
+                        <legend class="option-group-label">Asa</legend>
+                        <div class="option-checkbox-grid">
+                            <label class="option-checkbox is-selected">
+                                <input type="checkbox" name="handleSize" value="Asa pequeña" data-handle-option checked>
+                                <span>Asa pequeña</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="handleSize" value="Asa grande" data-handle-option>
+                                <span>Asa grande</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="option-group">
+                        <legend class="option-group-label">Bolsillo</legend>
+                        <label class="option-checkbox option-checkbox--wide" id="headphonePocketOption">
+                            <input type="checkbox" id="headphonePocket" value="Con bolsillo para auricular">
+                            <span>Con bolsillo para auricular</span>
+                        </label>
+                    </fieldset>
                 </div>
 
                 <!-- Botón añadir a cesta -->
@@ -321,15 +257,15 @@
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <span class="footer-logo">MONET</span>
+                <span class="footer-logo">CAOSTRI</span>
                 <p>Haute Maroquinerie depuis 2010</p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
                     <h4>La Maison</h4>
-                    <a href="index.html#maison">Nuestra Historia</a>
-                    <a href="index.html#maison">Artesanía</a>
-                    <a href="index.html#coleccion">Colecciones</a>
+                    <a href="historia.html">Nuestra Historia</a>
+                    <a href="historia.html">Artesanía</a>
+                    <a href="coleccion.html">Colecciones</a>
                 </div>
                 <div class="footer-column">
                     <h4>Servicio</h4>
@@ -346,7 +282,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 MONET. Todos los derechos reservados.</p>
+            <p>© 2024 CAOSTRI. Todos los derechos reservados.</p>
         </div>
     </footer>
 
