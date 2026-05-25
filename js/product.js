@@ -146,6 +146,8 @@ const ProductDOM = {
     bag3DViewer: document.getElementById('bag3DViewer'),
     productDetailPhoto: document.getElementById('productDetailPhoto'),
     productPhotoThumbs: document.getElementById('productPhotoThumbs'),
+    productPhotoPrev: document.getElementById('productPhotoPrev'),
+    productPhotoNext: document.getElementById('productPhotoNext'),
     handleOptionCheckboxes: document.querySelectorAll('[data-handle-option]'),
     headphonePocket: document.getElementById('headphonePocket'),
     optionCheckboxes: document.querySelectorAll('.option-checkbox input'),
@@ -286,16 +288,38 @@ function renderProductGallery() {
 
     ProductDOM.productPhotoThumbs.querySelectorAll('.product-photo-thumb').forEach(button => {
         button.addEventListener('click', () => {
-            const photo = productPhotos[Number(button.dataset.photoIndex)];
-            if (!photo) return;
-
-            activeProductPhotoIndex = Number(button.dataset.photoIndex);
-            ProductDOM.productDetailPhoto.src = photo.src;
-            ProductDOM.productDetailPhoto.alt = photo.alt || currentProduct.name;
-            ProductDOM.productPhotoThumbs.querySelectorAll('.product-photo-thumb').forEach(thumb => thumb.classList.remove('active'));
-            button.classList.add('active');
-            updateProductImageColor();
+            selectProductPhoto(Number(button.dataset.photoIndex));
         });
+    });
+
+    initProductGalleryArrows();
+    updateProductImageColor();
+}
+
+function initProductGalleryArrows() {
+    const hasMultiplePhotos = productPhotos.length > 1;
+
+    [ProductDOM.productPhotoPrev, ProductDOM.productPhotoNext].forEach(button => {
+        if (!button) return;
+        button.hidden = !hasMultiplePhotos;
+    });
+
+    if (ProductDOM.productPhotoPrev) {
+        ProductDOM.productPhotoPrev.onclick = () => selectProductPhoto(activeProductPhotoIndex - 1);
+    }
+
+    if (ProductDOM.productPhotoNext) {
+        ProductDOM.productPhotoNext.onclick = () => selectProductPhoto(activeProductPhotoIndex + 1);
+    }
+}
+
+function selectProductPhoto(index) {
+    if (!productPhotos.length) return;
+
+    activeProductPhotoIndex = (index + productPhotos.length) % productPhotos.length;
+
+    ProductDOM.productPhotoThumbs?.querySelectorAll('.product-photo-thumb').forEach((thumb, thumbIndex) => {
+        thumb.classList.toggle('active', thumbIndex === activeProductPhotoIndex);
     });
 
     updateProductImageColor();
