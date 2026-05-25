@@ -16,6 +16,7 @@
 
     /* Tipografías */
     --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-inria: 'Inria Serif', Georgia, serif;
     --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Espaciado */
@@ -1068,6 +1069,7 @@ ul, ol {
 }
 
 .art-copy {
+    font-family: var(--font-body);
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
@@ -1079,7 +1081,7 @@ ul, ol {
 }
 
 .art-title {
-    font-family: var(--font-display);
+    font-family: var(--font-inria);
     font-size: clamp(2.6rem, 5vw, 4.7rem);
     font-weight: 400;
     line-height: 1.08;
