@@ -20,7 +20,8 @@ const ProductsData = {
         ],
         dimensions: { width: '28 cm', height: '20 cm', depth: '12 cm', handle: '22 cm' },
         colors: { noir: 8500, ivory: 8500 },
-        defaultColor: 'noir'
+        defaultColor: 'noir',
+        customizable: false
     },
     'equora-petit': {
         id: 'equora-petit',
@@ -58,9 +59,9 @@ const ProductsData = {
         badge: 'Petit',
         tagline: 'Volumen redondeado en formato compacto',
         description: 'Orbea Petit trabaja una forma redondeada, sobria y funcional. Su interior comparte la misma composición visual que Orbea Grand.',
-        image: 'images/petitOrbea.png',
+        image: 'images/GrandOrbea.png',
         galleryImages: [
-            { src: 'images/petitorbeadetras.png', alt: 'Vista trasera de Orbea Petit' },
+            { src: 'images/grandorbeadetras.png', alt: 'Vista trasera de Orbea Petit' },
             { src: 'images/orbeainterior.png', alt: 'Interior Orbea' }
         ],
         dimensions: { width: '24 cm', height: '20 cm', depth: '8 cm', strap: '42 cm' },
@@ -103,9 +104,9 @@ const ProductsData = {
         badge: 'Grand',
         tagline: 'La forma Orbea con más presencia y capacidad',
         description: 'Orbea Grand lleva el volumen redondeado de la familia a una escala más generosa. Comparte interior con Orbea Petit.',
-        image: 'images/GrandOrbea.png',
+        image: 'images/petitOrbea.png',
         galleryImages: [
-            { src: 'images/grandorbeadetras.png', alt: 'Vista trasera de Orbea Grand' },
+            { src: 'images/petitorbeadetras.png', alt: 'Vista trasera de Orbea Grand' },
             { src: 'images/orbeainterior.png', alt: 'Interior Orbea' }
         ],
         dimensions: { width: '33 cm', height: '28 cm', depth: '11 cm', strap: '50 cm' },
@@ -148,6 +149,7 @@ const ProductDOM = {
     handleOptionCheckboxes: document.querySelectorAll('[data-handle-option]'),
     headphonePocket: document.getElementById('headphonePocket'),
     optionCheckboxes: document.querySelectorAll('.option-checkbox input'),
+    productOptions: document.querySelector('.product-options'),
     productTitle: document.getElementById('productTitle'),
     productTagline: document.getElementById('productTagline'),
     productPrice: document.getElementById('productPrice'),
@@ -215,6 +217,8 @@ function updateProductUI() {
 
     // Dimensiones
     updateDimensions();
+
+    updateCustomizationVisibility();
 }
 
 function updatePrice() {
@@ -550,7 +554,19 @@ function update3DColor() {
 // PERSONALIZACION
 // =============================================
 
+function isProductCustomizable() {
+    return currentProduct?.customizable !== false;
+}
+
+function updateCustomizationVisibility() {
+    if (ProductDOM.productOptions) {
+        ProductDOM.productOptions.hidden = !isProductCustomizable();
+    }
+}
+
 function initProductOptions() {
+    if (!isProductCustomizable()) return;
+
     const handleCheckboxes = Array.from(ProductDOM.handleOptionCheckboxes || []);
 
     const syncOptionLabels = () => {
@@ -580,6 +596,8 @@ function initProductOptions() {
 }
 
 function getSelectedProductOptions() {
+    if (!isProductCustomizable()) return null;
+
     const selectedHandle = Array
         .from(ProductDOM.handleOptionCheckboxes || [])
         .find(checkbox => checkbox.checked);
@@ -593,6 +611,8 @@ function getSelectedProductOptions() {
 }
 
 function getProductOptionKey(options) {
+    if (!options) return 'standard';
+
     return [
         options.handleSize === 'Asa grande' ? 'handle-large' : 'handle-small',
         options.headphonePocket ? 'headphone-pocket' : 'no-headphone-pocket'
@@ -600,6 +620,8 @@ function getProductOptionKey(options) {
 }
 
 function getProductOptionSummary(options) {
+    if (!options) return 'Edición limitada';
+
     return `${options.handleSize} · ${options.pocketLabel}`;
 }
 

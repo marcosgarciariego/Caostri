@@ -1,12 +1,13 @@
 const viewer = document.getElementById('heroModelViewer');
 const stage = document.querySelector('.hero-model-stage');
 const status = document.getElementById('heroModelStatus');
-const hint = document.getElementById('heroModelHint');
 const HERO_FRAMES = Array.from(
     { length: 24 },
     (_, index) => `./images/hero-model-frames/frame-${String(index).padStart(2, '0')}.png`
 );
 const HERO_FRONT_FRAME = 12;
+const HERO_AUTO_ROTATE_SPEED = 0.65;
+const HERO_SPRITE_FRAME_DELAY_MS = 180;
 
 if (!viewer || !stage || !status) {
     throw new Error('Hero 3D viewer container not found.');
@@ -60,20 +61,13 @@ async function initHeroModel() {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
+    controls.enableRotate = false;
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 1.1;
+    controls.autoRotateSpeed = HERO_AUTO_ROTATE_SPEED;
     controls.minPolarAngle = Math.PI / 2 - 0.35;
     controls.maxPolarAngle = Math.PI / 2 + 0.3;
-
-    controls.addEventListener('start', () => {
-        viewer.classList.add('is-dragging');
-    });
-
-    controls.addEventListener('end', () => {
-        viewer.classList.remove('is-dragging');
-    });
 
     const ambientLight = new THREE.HemisphereLight(0xfffbf6, 0xcbbca8, 2.6);
     scene.add(ambientLight);
@@ -115,9 +109,6 @@ async function initHeroModel() {
                 stage.classList.add('is-ready');
                 stage.classList.remove('is-error');
                 status.textContent = 'Modelo cargado';
-                if (hint) {
-                    hint.hidden = false;
-                }
                 resolve();
             },
             (event) => {
@@ -262,9 +253,6 @@ function initSpriteFallback(message = 'Visor local listo.') {
     stage.classList.add('is-sprite');
     stage.classList.remove('is-error');
     status.textContent = 'Cargando visor local...';
-    if (hint) {
-        hint.hidden = false;
-    }
 
     const sprite = document.createElement('img');
     sprite.className = 'hero-model-sprite';
@@ -273,9 +261,6 @@ function initSpriteFallback(message = 'Visor local listo.') {
     viewer.appendChild(sprite);
 
     let currentFrame = HERO_FRONT_FRAME;
-    let dragRemainder = 0;
-    let isDragging = false;
-    let lastX = 0;
     let lastAutoFrameTime = 0;
 
     const updateFrame = () => {
@@ -289,7 +274,7 @@ function initSpriteFallback(message = 'Visor local listo.') {
     };
 
     const autoRotate = (timestamp) => {
-        if (!isDragging && timestamp - lastAutoFrameTime > 110) {
+        if (timestamp - lastAutoFrameTime > HERO_SPRITE_FRAME_DELAY_MS) {
             advanceFrame(1);
             lastAutoFrameTime = timestamp;
         }
@@ -306,49 +291,7 @@ function initSpriteFallback(message = 'Visor local listo.') {
     sprite.addEventListener('error', () => {
         stage.classList.add('is-error');
         status.textContent = 'No se pudo cargar el visor local.';
-        if (hint) {
-            hint.hidden = true;
-        }
     }, { once: true });
-
-    viewer.addEventListener('pointerdown', (event) => {
-        isDragging = true;
-        lastX = event.clientX;
-        viewer.classList.add('is-dragging');
-        viewer.setPointerCapture?.(event.pointerId);
-    });
-
-    viewer.addEventListener('pointermove', (event) => {
-        if (!isDragging) {
-            return;
-        }
-
-        dragRemainder += (event.clientX - lastX) / 16;
-        lastX = event.clientX;
-
-        if (Math.abs(dragRemainder) >= 1) {
-            const step = dragRemainder > 0 ? 1 : -1;
-            dragRemainder -= step;
-            advanceFrame(step);
-        }
-    });
-
-    const stopDragging = (event) => {
-        isDragging = false;
-        dragRemainder = 0;
-        viewer.classList.remove('is-dragging');
-        if (event?.pointerId !== undefined) {
-            viewer.releasePointerCapture?.(event.pointerId);
-        }
-    };
-
-    viewer.addEventListener('pointerup', stopDragging);
-    viewer.addEventListener('pointercancel', stopDragging);
-    viewer.addEventListener('pointerleave', () => {
-        if (!isDragging) {
-            viewer.classList.remove('is-dragging');
-        }
-    });
 
     updateFrame();
 }
