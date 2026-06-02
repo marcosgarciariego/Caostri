@@ -67,9 +67,10 @@
                 </div>
             </div>
             <div class="hero-image animate-fade-left">
-                <div class="image-frame hero-model-stage">
-                    <div id="heroModelViewer" class="hero-model-viewer" aria-label="Visor 3D del bolso"></div>
-                    <div class="hero-model-overlay" id="heroModelStatus">Cargando bolso 3D...</div>
+                <div class="image-frame hero-model-stage hero-video-stage">
+                    <video class="hero-bag-video" autoplay muted loop playsinline preload="metadata" aria-label="Video del bolso CAOSTRI">
+                        <source src="images/Firefly%20Plano%20cinematogr%C3%A1fico%20de%20un%20bolso%20elegante%20girando%20lentamente%20360%C2%B0%20sobre%20s%C3%AD%20mismo%20en%20c%C3%A1mara%20.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
@@ -180,7 +181,6 @@
         <span>Añadido a tu cesta</span>
     </div>
 
-    <script src="js/hero-model.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

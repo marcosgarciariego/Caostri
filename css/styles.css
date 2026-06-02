@@ -598,6 +598,22 @@ ul, ol {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
+.hero-video-stage {
+    background: rgba(250, 249, 247, 0.72);
+}
+
+.hero-bag-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    box-sizing: border-box;
+    padding: clamp(0.75rem, 2.5vw, 2rem);
+    object-fit: contain;
+    object-position: center;
+    background: var(--color-white);
+}
+
 .hero-model-viewer {
     position: relative;
     width: 100%;
