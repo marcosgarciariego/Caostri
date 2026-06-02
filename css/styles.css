@@ -800,15 +800,80 @@ ul, ol {
     box-shadow: none;
 }
 
-.piece-features {
+.piece-photo-carousel {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.96), transparent 34%),
+        linear-gradient(145deg, rgba(250, 249, 247, 0.94), rgba(238, 232, 221, 0.78));
+}
+
+.piece-photo-carousel::after {
+    content: '';
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
+    z-index: 0;
+    left: 12%;
+    right: 12%;
+    bottom: 8%;
+    height: 16%;
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.08);
+    filter: blur(18px);
+    pointer-events: none;
+}
+
+.piece-photo-slide {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+    opacity: 0;
+    transform: scale(0.985);
+    animation: piecePhotoCycle 25s infinite ease-in-out;
+}
+
+.piece-photo-slide:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.piece-photo-slide:nth-child(3) {
+    animation-delay: 10s;
+}
+
+.piece-photo-slide:nth-child(4) {
+    animation-delay: 15s;
+}
+
+.piece-photo-slide:nth-child(5) {
+    animation-delay: 20s;
+}
+
+@keyframes piecePhotoCycle {
+    0%,
+    18% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    22%,
+    100% {
+        opacity: 0;
+        transform: scale(0.985);
+    }
+}
+
+.piece-features {
     width: min(100%, 560px);
-    justify-content: center;
-    padding-top: var(--space-md);
+    justify-content: flex-start;
+    margin: 0 0 var(--space-lg);
+    padding: var(--space-md) 0;
     border-top: 1px solid rgba(168, 139, 74, 0.28);
+    border-bottom: 1px solid rgba(168, 139, 74, 0.16);
 }
 
 .feature-number--edition {
@@ -2172,7 +2237,7 @@ ul, ol {
     display: grid;
     grid-template-columns: 80px 1fr 360px;
     gap: var(--space-xl);
-    align-items: start;
+    align-items: stretch;
 }
 
 .maison-block.reverse {
@@ -2231,19 +2296,25 @@ ul, ol {
 
 .block-image {
     display: flex;
+    position: relative;
+    align-self: stretch;
     justify-content: center;
-    align-items: center;
-}
-
-.maison-block-photo {
-    width: 100%;
-    min-height: 220px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: center;
+    align-items: stretch;
+    min-height: 0;
+    overflow: hidden;
     border: 1px solid rgba(168, 139, 74, 0.22);
     border-radius: 8px;
     box-shadow: 0 18px 50px rgba(26, 26, 26, 0.1);
+}
+
+.maison-block-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
 }
 
 .decorative-element {
@@ -2833,6 +2904,7 @@ ul, ol {
 
     .maison-block {
         grid-template-columns: 1fr;
+        min-height: 0;
     }
 
     .maison-block.reverse {
@@ -2841,6 +2913,16 @@ ul, ol {
 
     .block-number {
         font-size: 2rem;
+    }
+
+    .block-image {
+        align-items: center;
+        min-height: 220px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .maison-block-photo {
+        height: 100%;
     }
 
     .cart-item {

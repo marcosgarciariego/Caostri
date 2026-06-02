@@ -27,8 +27,8 @@ const ProductsData = {
         id: 'equora-petit',
         name: 'Équora Petit',
         badge: 'Best seller',
-        tagline: 'Formato pequeño, estructura limpia y cierre superior',
-        description: 'Équora Petit concentra la arquitectura de la línea en una silueta compacta. Comparte interior con Équora Grand y se presenta en cuatro colores.',
+        tagline: 'Definido por el equilibrio.',
+        description: 'Definido por el equilibrio.',
         image: 'images/petitÉquora.png',
         galleryImages: [
             { src: 'images/petitequoradetras.png', alt: 'Vista trasera de Équora Petit' },
@@ -42,8 +42,8 @@ const ProductsData = {
         id: 'fluvia-petit',
         name: 'Fluvia Petit',
         badge: 'Petit',
-        tagline: 'Una pieza ligera con caída suave y gesto escultórico',
-        description: 'Fluvia Petit combina una silueta de hombro fluida con un interior artesanal coordinado. Una proporción pequeña para llevar lo esencial con calma.',
+        tagline: 'Donde el movimiento encuentra armonía.',
+        description: 'Donde el movimiento encuentra armonía.',
         image: 'images/petitfluvia.png',
         galleryImages: [
             { src: 'images/Petitfluviadetras.png', alt: 'Vista trasera de Fluvia Petit' },
@@ -55,14 +55,14 @@ const ProductsData = {
     },
     'orbea-petit': {
         id: 'orbea-petit',
-        name: 'Orbea Petit',
+        name: 'Orbéa Petit',
         badge: 'Petit',
-        tagline: 'Volumen redondeado en formato compacto',
-        description: 'Orbea Petit trabaja una forma redondeada, sobria y funcional. Su interior comparte la misma composición visual que Orbea Grand.',
+        tagline: 'Un estudio de curvas y proporción.',
+        description: 'Un estudio de curvas y proporción.',
         image: 'images/GrandOrbea.png',
         galleryImages: [
-            { src: 'images/grandorbeadetras.png', alt: 'Vista trasera de Orbea Petit' },
-            { src: 'images/orbeainterior.png', alt: 'Interior Orbea' }
+            { src: 'images/grandorbeadetras.png', alt: 'Vista trasera de Orbéa Petit' },
+            { src: 'images/orbeainterior.png', alt: 'Interior Orbéa' }
         ],
         dimensions: { width: '24 cm', height: '20 cm', depth: '8 cm', strap: '42 cm' },
         colors: { noir: 2400, camel: 2400, burgundy: 2400, navy: 2400 },
@@ -72,8 +72,8 @@ const ProductsData = {
         id: 'equora-grand',
         name: 'Équora Grand',
         badge: 'Grand',
-        tagline: 'La arquitectura Équora en su proporción más amplia',
-        description: 'Équora Grand amplía la silueta del modelo Petit sin perder precisión. Su interior mantiene la misma identidad de la familia Équora.',
+        tagline: 'Definido por el equilibrio.',
+        description: 'Definido por el equilibrio.',
         image: 'images/GrandÉquora.png',
         galleryImages: [
             { src: 'images/grandequoradetras.png', alt: 'Vista trasera de Équora Grand' },
@@ -87,8 +87,8 @@ const ProductsData = {
         id: 'fluvia-grand',
         name: 'Fluvia Grand',
         badge: 'Grand',
-        tagline: 'Mayor amplitud para una silueta fluida de atelier',
-        description: 'Fluvia Grand conserva la suavidad del modelo Petit y añade una capacidad mayor. El interior Fluvia se repite en ambas proporciones.',
+        tagline: 'Donde el movimiento encuentra armonía.',
+        description: 'Donde el movimiento encuentra armonía.',
         image: 'images/Grandfluvia.png',
         galleryImages: [
             { src: 'images/Grandfluviadetras.png', alt: 'Vista trasera de Fluvia Grand' },
@@ -100,14 +100,14 @@ const ProductsData = {
     },
     'orbea-grand': {
         id: 'orbea-grand',
-        name: 'Orbea Grand',
+        name: 'Orbéa Grand',
         badge: 'Grand',
-        tagline: 'La forma Orbea con más presencia y capacidad',
-        description: 'Orbea Grand lleva el volumen redondeado de la familia a una escala más generosa. Comparte interior con Orbea Petit.',
+        tagline: 'Un estudio de curvas y proporción.',
+        description: 'Un estudio de curvas y proporción.',
         image: 'images/petitOrbea.png',
         galleryImages: [
-            { src: 'images/petitorbeadetras.png', alt: 'Vista trasera de Orbea Grand' },
-            { src: 'images/orbeainterior.png', alt: 'Interior Orbea' }
+            { src: 'images/petitorbeadetras.png', alt: 'Vista trasera de Orbéa Grand' },
+            { src: 'images/orbeainterior.png', alt: 'Interior Orbéa' }
         ],
         dimensions: { width: '33 cm', height: '28 cm', depth: '11 cm', strap: '50 cm' },
         colors: { noir: 2900, camel: 2900, burgundy: 2900, navy: 2900 },
@@ -149,6 +149,8 @@ const ProductDOM = {
     productPhotoPrev: document.getElementById('productPhotoPrev'),
     productPhotoNext: document.getElementById('productPhotoNext'),
     handleOptionCheckboxes: document.querySelectorAll('[data-handle-option]'),
+    featureOptionCheckboxes: document.querySelectorAll('[data-feature-option]'),
+    engravingOptionCheckboxes: document.querySelectorAll('[data-engraving-option]'),
     headphonePocket: document.getElementById('headphonePocket'),
     optionCheckboxes: document.querySelectorAll('.option-checkbox input'),
     productOptions: document.querySelector('.product-options'),
@@ -592,6 +594,7 @@ function initProductOptions() {
     if (!isProductCustomizable()) return;
 
     const handleCheckboxes = Array.from(ProductDOM.handleOptionCheckboxes || []);
+    const engravingCheckboxes = Array.from(ProductDOM.engravingOptionCheckboxes || []);
 
     const syncOptionLabels = () => {
         ProductDOM.optionCheckboxes?.forEach(input => {
@@ -615,7 +618,24 @@ function initProductOptions() {
         });
     });
 
-    ProductDOM.headphonePocket?.addEventListener('change', syncOptionLabels);
+    engravingCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                engravingCheckboxes.forEach(otherCheckbox => {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+
+            syncOptionLabels();
+        });
+    });
+
+    ProductDOM.optionCheckboxes?.forEach(input => {
+        input.addEventListener('change', syncOptionLabels);
+    });
+
     syncOptionLabels();
 }
 
@@ -626,11 +646,20 @@ function getSelectedProductOptions() {
         .from(ProductDOM.handleOptionCheckboxes || [])
         .find(checkbox => checkbox.checked);
     const hasHeadphonePocket = Boolean(ProductDOM.headphonePocket?.checked);
+    const selectedFeatures = Array
+        .from(ProductDOM.featureOptionCheckboxes || [])
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+    const selectedEngraving = Array
+        .from(ProductDOM.engravingOptionCheckboxes || [])
+        .find(checkbox => checkbox.checked)?.value || null;
 
     return {
         handleSize: selectedHandle?.value || 'Asa pequeña',
         headphonePocket: hasHeadphonePocket,
-        pocketLabel: hasHeadphonePocket ? 'Con bolsillo para auricular' : 'Sin bolsillo para auricular'
+        pocketLabel: hasHeadphonePocket ? 'Con bolsillo para auricular' : 'Sin bolsillo para auricular',
+        features: selectedFeatures,
+        engraving: selectedEngraving
     };
 }
 
@@ -639,14 +668,29 @@ function getProductOptionKey(options) {
 
     return [
         options.handleSize === 'Asa grande' ? 'handle-large' : 'handle-small',
-        options.headphonePocket ? 'headphone-pocket' : 'no-headphone-pocket'
+        options.headphonePocket ? 'headphone-pocket' : 'no-headphone-pocket',
+        ...(options.features || []).map(toOptionKeyPart),
+        options.engraving ? toOptionKeyPart(options.engraving) : 'no-engraving'
     ].join('|');
 }
 
 function getProductOptionSummary(options) {
     if (!options) return 'Edición limitada';
 
-    return `${options.handleSize} · ${options.pocketLabel}`;
+    return [
+        options.handleSize,
+        options.pocketLabel,
+        ...(options.features || []),
+        options.engraving
+    ].filter(Boolean).join(' · ');
+}
+
+function toOptionKeyPart(value) {
+    return String(value)
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
 }
 
 // =============================================
