@@ -12,11 +12,11 @@ const ProductsData = {
         name: 'Un jardín de rosas',
         badge: 'Limitado',
         tagline: 'Una edición numerada inspirada en la casa entre las rosas',
-        description: 'Un jardín de rosas nace del diálogo entre el paisaje de Claude Monet y la precisión de la marroquinería contemporánea. Una pieza artística, delicada y limitada.',
-        image: 'images/jardinderosas.png',
+        description: 'Inspirado en La casa entre las rosas de Claude Monet, este bolso transforma una obra maestra en una pieza de colección. Una edición limitada donde arte, lujo y funcionalidad conviven en perfecta armonía.',
+        image: 'images/jardin-rosas-frente-cutout.png',
         galleryImages: [
-            { src: 'images/jardindefloresdetras.png', alt: 'Vista trasera de Un jardín de rosas' },
-            { src: 'images/jardinderosasinterior.png', alt: 'Interior de Un jardín de rosas' }
+            { src: 'images/jardin-rosas-detras-cutout.png', alt: 'Vista trasera de Un jardín de rosas' },
+            { src: 'images/jardin-rosas-interior-cutout.png', alt: 'Interior de Un jardín de rosas' }
         ],
         dimensions: { width: '28 cm', height: '20 cm', depth: '12 cm', handle: '22 cm' },
         colors: { noir: 8500, ivory: 8500 },
