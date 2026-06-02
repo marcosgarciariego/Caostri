@@ -29,10 +29,10 @@ const ProductsData = {
         badge: 'Best seller',
         tagline: 'Definido por el equilibrio.',
         description: 'Definido por el equilibrio.',
-        image: 'images/petitÉquora.png',
+        image: 'images/equora-petit-frente-cutout.png',
         galleryImages: [
-            { src: 'images/petitequoradetras.png', alt: 'Vista trasera de Équora Petit' },
-            { src: 'images/equorainterior.png', alt: 'Interior Équora' }
+            { src: 'images/equora-petit-detras-cutout.png', alt: 'Vista trasera de Équora Petit' },
+            { src: 'images/equora-interior-cutout.png', alt: 'Interior Équora' }
         ],
         dimensions: { width: '24 cm', height: '18 cm', depth: '10 cm', handle: '16 cm' },
         colors: { noir: 3200, camel: 3200, burgundy: 3200, navy: 3200 },
@@ -44,10 +44,10 @@ const ProductsData = {
         badge: 'Petit',
         tagline: 'Donde el movimiento encuentra armonía.',
         description: 'Donde el movimiento encuentra armonía.',
-        image: 'images/petitfluvia.png',
+        image: 'images/fluvia-petit-frente-cutout.png',
         galleryImages: [
-            { src: 'images/Petitfluviadetras.png', alt: 'Vista trasera de Fluvia Petit' },
-            { src: 'images/fluviainterior.png', alt: 'Interior Fluvia' }
+            { src: 'images/fluvia-petit-detras-cutout.png', alt: 'Vista trasera de Fluvia Petit' },
+            { src: 'images/fluvia-interior-cutout.png', alt: 'Interior Fluvia' }
         ],
         dimensions: { width: '25 cm', height: '16 cm', depth: '9 cm', strap: '44 cm' },
         colors: { noir: 2700, camel: 2700, burgundy: 2700, navy: 2700 },
@@ -59,10 +59,10 @@ const ProductsData = {
         badge: 'Petit',
         tagline: 'Un estudio de curvas y proporción.',
         description: 'Un estudio de curvas y proporción.',
-        image: 'images/GrandOrbea.png',
+        image: 'images/orbea-petit-frente-cutout.png',
         galleryImages: [
-            { src: 'images/grandorbeadetras.png', alt: 'Vista trasera de Orbéa Petit' },
-            { src: 'images/orbeainterior.png', alt: 'Interior Orbéa' }
+            { src: 'images/orbea-petit-detras-cutout.png', alt: 'Vista trasera de Orbéa Petit' },
+            { src: 'images/orbea-interior-cutout.png', alt: 'Interior Orbéa' }
         ],
         dimensions: { width: '24 cm', height: '20 cm', depth: '8 cm', strap: '42 cm' },
         colors: { noir: 2400, camel: 2400, burgundy: 2400, navy: 2400 },
@@ -74,10 +74,10 @@ const ProductsData = {
         badge: 'Grand',
         tagline: 'Definido por el equilibrio.',
         description: 'Definido por el equilibrio.',
-        image: 'images/GrandÉquora.png',
+        image: 'images/equora-grand-frente-cutout.png',
         galleryImages: [
-            { src: 'images/grandequoradetras.png', alt: 'Vista trasera de Équora Grand' },
-            { src: 'images/equorainterior.png', alt: 'Interior Équora' }
+            { src: 'images/equora-grand-detras-cutout.png', alt: 'Vista trasera de Équora Grand' },
+            { src: 'images/equora-interior-cutout.png', alt: 'Interior Équora' }
         ],
         dimensions: { width: '36 cm', height: '27 cm', depth: '14 cm', handle: '22 cm' },
         colors: { noir: 4100, camel: 4100, burgundy: 4100, navy: 4100 },
@@ -89,10 +89,10 @@ const ProductsData = {
         badge: 'Grand',
         tagline: 'Donde el movimiento encuentra armonía.',
         description: 'Donde el movimiento encuentra armonía.',
-        image: 'images/Grandfluvia.png',
+        image: 'images/fluvia-grand-frente-cutout.png',
         galleryImages: [
-            { src: 'images/Grandfluviadetras.png', alt: 'Vista trasera de Fluvia Grand' },
-            { src: 'images/fluviainterior.png', alt: 'Interior Fluvia' }
+            { src: 'images/fluvia-grand-detras-cutout.png', alt: 'Vista trasera de Fluvia Grand' },
+            { src: 'images/fluvia-interior-cutout.png', alt: 'Interior Fluvia' }
         ],
         dimensions: { width: '34 cm', height: '22 cm', depth: '12 cm', strap: '52 cm' },
         colors: { noir: 3200, camel: 3200, burgundy: 3200, navy: 3200 },
@@ -104,10 +104,10 @@ const ProductsData = {
         badge: 'Grand',
         tagline: 'Un estudio de curvas y proporción.',
         description: 'Un estudio de curvas y proporción.',
-        image: 'images/petitOrbea.png',
+        image: 'images/orbea-grand-frente-cutout.png',
         galleryImages: [
-            { src: 'images/petitorbeadetras.png', alt: 'Vista trasera de Orbéa Grand' },
-            { src: 'images/orbeainterior.png', alt: 'Interior Orbéa' }
+            { src: 'images/orbea-grand-detras-cutout.png', alt: 'Vista trasera de Orbéa Grand' },
+            { src: 'images/orbea-interior-cutout.png', alt: 'Interior Orbéa' }
         ],
         dimensions: { width: '33 cm', height: '28 cm', depth: '11 cm', strap: '50 cm' },
         colors: { noir: 2900, camel: 2900, burgundy: 2900, navy: 2900 },
